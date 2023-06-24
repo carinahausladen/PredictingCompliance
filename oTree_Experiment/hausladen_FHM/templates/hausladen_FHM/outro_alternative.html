@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Das Experiment ist beendet
+{% endblock %}
+
+
+
+{% block content %}
+
+    <p>
+    {% if player.absent_player %} Sie scheinen {% else %} Das andere Mitglied Ihrer Zweiergruppe scheint {% endif %}
+        nicht mehr aktiv teilzunehmen. <br>
+    Aus diesem Grund wurde das Experiment für Ihre Zweiergruppe beendet. <br>
+        Da das Experiment {% if player.absent_player %} wegen  {% else %} nicht wegen {% endif %} Ihnen
+        abgebrochen wurde, erhalten Sie eine Auszahlung von {{ player.payoff | c }}.
+    </p>
+
+    <p>
+        Die Überweisung wird heute in Auftrag gegeben. <br>
+        Sollten Sie keine Auszahlung in den folgenden drei Werktagen erhalten, so wenden Sie sich bitte an:
+        hausladen@wiso.uni-koeln.de.
+    </p>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Verständnisfragen
+{% endblock %}
+
+{% block content %}
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleibt noch 1 Minute." +
+                " Bitte treffen Sie eine Auswahl oder das Experiment wird beendet.");
+        },
+            3*60*1000
+    );
+    </script>
+
+    <p>
+        Ihre Angaben waren beim ersten Versuch <strong>nicht alle</strong> richtig. <br>
+        Bitte versuchen Sie es erneut. <br>
+        Sie können jederzeit in den <a href="{% static 'intro_spec_static.html' %}" target="_blank">Instruktionen</a> nachlesen.
+    </p>
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Vielen Dank!
+{% endblock %}
+
+{% block content %}
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleibt noch 1 Minute." +
+                " Bitte treffen Sie eine Auswahl oder das Experiment wird beendet.");
+        },
+            parseInt("{{ Constants.soft_timeout }}")
+    );
+    </script>
+
+    <p>
+        Vielen Dank für Ihre Eingabe. <br>
+        Bevor wir Sie über Ihre Auszahlung informieren, bitten wir Sie, die Fragen auf den folgenden Screens zu beantworten.
+    </p>
+
+    <br>
+
+    {% next_button %}
+
+{% endblock %}

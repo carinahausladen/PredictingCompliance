@@ -1,0 +1,59 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Allgemeine Instruktionen
+{% endblock %}
+
+
+
+{% block content %}
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleibt noch 1 Minute." +
+                " Bitte treffen Sie eine Auswahl oder das Experiment wird beendet.");
+        },
+            parseInt("{{ Constants.soft_timeout }}")
+    );
+    </script>
+
+    <p>
+        Herzlich willkommen zur Online-Studie des BonnEconLab / MPI Decision Lab. <br>
+        Bitte beachten Sie, dass Sie an dieser Studie nur teilnehmen dürfen, wenn Sie sich in unserer Teilnahmedatenbank hierfür angemeldet haben. <br>
+        Sie dürfen an dieser Studie nur einmal teilnehmen.
+    </p>
+
+    <p>
+        Für Ihre Teilnahme erhalten Sie eine Mindestauszahlung von {{ Constants.showup | c}}.
+        Während des Experimentes haben Sie die Möglichkeit zusätzlich Geld zu verdienen.
+    </p>
+
+
+    <p>
+        Die Auswertung der experimentellen Studie erfolgt anonym.
+        Wir werden in keinem Fall Ihren Namen mit den in der experimentellen Studie gesammelten Daten in Verbindung bringen.
+        Sie werden weder vor noch nach der experimentellen Studie die Identität der anderen Teilnehmer erfahren.
+        Die anderen Teilnehmer werden ebenso keine Kenntnis über Ihre Identität erlangen.
+    </p>
+
+    <p>
+        Bitte lesen Sie die Anweisungen auf jeden Screen sorgfältig durch.
+        Zu den Instruktionen können Sie jederzeit zurückkehren.
+        Alle anderen einmal verlassenen Screens können allerdings nicht wieder aufgerufen werden.
+    </p>
+
+    <p>
+        Für jeden Screen ist eine Bearbeitungszeit sichtbar definiert.
+        Wenn Sie innerhalb dieses Zeitraumes keine Auswahl treffen, gehen wir davon aus, dass Sie nicht mehr aktiv sind.
+        In diesem Fall können wir keine Auszahlung aus dem Experiment gewährleisten.
+    </p>
+
+    <p>
+        Bei Rückfragen oder technischen Schwierigkeiten melden Sie sich bitte bei hausladen@wiso.uni-koeln.de
+    </p>
+
+    <br>
+
+    <button class="otree-btn-next btn btn-primary"> VERSTANDEN </button>
+{% endblock %}

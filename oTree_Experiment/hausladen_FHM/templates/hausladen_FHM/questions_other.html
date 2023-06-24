@@ -1,0 +1,119 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Fragen
+{% endblock %}
+
+{% block content %}
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleibt noch 1 Minute." +
+                " Bitte treffen Sie eine Auswahl oder das Experiment wird beendet.");
+        },
+            parseInt("{{ Constants.soft_timeout }}")
+    );
+    </script>
+
+    <h6>
+        Wie schätzen Sie sich persönlich ein: Sind Sie im Allgemeinen ein risikobereiter Mensch, oder versuchen Sie, Risiken zu vermeiden?
+    </h6>
+
+    <div>
+        <tr>
+            <td> Gar nicht risikobereit </td>
+            <td><input type="radio" name="risk" value="0" /></td>
+            <td><input type="radio" name="risk" value="1" /></td>
+            <td><input type="radio" name="risk" value="2" /></td>
+            <td><input type="radio" name="risk" value="3" /></td>
+            <td><input type="radio" name="risk" value="4" /></td>
+            <td><input type="radio" name="risk" value="5" /></td>
+            <td><input type="radio" name="risk" value="6" /></td>
+            <td><input type="radio" name="risk" value="7" /></td>
+            <td><input type="radio" name="risk" value="8" /></td>
+            <td><input type="radio" name="risk" value="9" /></td>
+            <td><input type="radio" name="risk" value="10" /></td>
+            <td> Sehr risikobereit </td>
+        </tr>
+    </div>
+
+    <br>
+
+    <h6>
+        Wie stehen Sie zum Thema Lügen zum eigenen Vorteil, wenn man die Möglichkeit hat?
+    </h6>
+
+    <div>
+        <tr>
+            <td> Das darf man auf keinen Fall tun </td>
+            <td><input type="radio" name="lie" value="1" /></td>
+            <td><input type="radio" name="lie" value="2" /></td>
+            <td><input type="radio" name="lie" value="3" /></td>
+            <td><input type="radio" name="lie" value="4" /></td>
+            <td><input type="radio" name="lie" value="5" /></td>
+            <td><input type="radio" name="lie" value="6" /></td>
+            <td><input type="radio" name="lie" value="7" /></td>
+            <td><input type="radio" name="lie" value="8" /></td>
+            <td><input type="radio" name="lie" value="9" /></td>
+            <td><input type="radio" name="lie" value="10" /></td>
+            <td> Trifft vollkommen zu </td>
+        </tr>
+    </div>
+
+    <br>
+
+    <h6>
+        Wie komplex fanden Sie die Entscheidung im Experiment?
+    </h6>
+
+    <div>
+        <tr>
+            <td> Überhaupt nicht komplex </td>
+            <td><input type="radio" name="complex" value="1" /></td>
+            <td><input type="radio" name="complex" value="2" /></td>
+            <td><input type="radio" name="complex" value="3" /></td>
+            <td><input type="radio" name="complex" value="4" /></td>
+            <td><input type="radio" name="complex" value="5" /></td>
+            <td><input type="radio" name="complex" value="6" /></td>
+            <td><input type="radio" name="complex" value="7" /></td>
+            <td><input type="radio" name="complex" value="8" /></td>
+            <td><input type="radio" name="complex" value="9" /></td>
+            <td><input type="radio" name="complex" value="10" /></td>
+            <td><input type="radio" name="complex" value="11" /></td>
+            <td> Sehr komplex </td>
+        </tr>
+    </div>
+
+    <br>
+
+    <h6>
+        Die politischen Strömungen werden mitunter gedanklich auf einer Skala von 'links' über 'mitte'  nach 'rechts' einsortiert. Wo würden Sie auf einer solchen Skala Ihre politische Grundüberzeugung einordnen?
+    </h6>
+
+    <div>
+        <tr>
+            <td> links </td>
+            <td><input type="radio" name="pol" value="1" /></td>
+            <td><input type="radio" name="pol" value="2" /></td>
+            <td><input type="radio" name="pol" value="3" /></td>
+            <td><input type="radio" name="pol" value="4" /></td>
+            <td><input type="radio" name="pol" value="5" /></td>
+            <td><input type="radio" name="pol" value="6" /></td>
+            <td><input type="radio" name="pol" value="7" /></td>
+            <td><input type="radio" name="pol" value="8" /></td>
+            <td><input type="radio" name="pol" value="9" /></td>
+            <td> rechts </td>
+        </tr>
+    </div>
+
+    <br>
+    {% formfield player.pray %}
+    <br>
+    {% formfield player.lab_exp %}
+    <br>
+    {% formfield player.income %}
+    <br>
+
+    {% next_button %}
+{% endblock %}

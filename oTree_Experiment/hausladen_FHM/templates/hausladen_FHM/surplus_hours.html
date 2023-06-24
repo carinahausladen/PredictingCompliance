@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Nun erfahren Sie Ihre Überstunden
+{% endblock %}
+
+{% block content %}
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleibt noch 1 Minute." +
+                " Bitte treffen Sie eine Auswahl oder das Experiment wird beendet.");
+        },
+            parseInt("{{ Constants.soft_timeout }}")
+    );
+    </script>
+
+    Um das Projekt zu realisieren, haben Sie und der andere Mitarbeiter Ihrer Zweiergruppe jeweils <b>{{ Constants.actual_surplus_hours }}</b> Überstunden geleistet.
+
+
+    {% next_button %}
+
+{% endblock %}

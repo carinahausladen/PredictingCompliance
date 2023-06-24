@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Bitte geben Sie Ihre Überstunden an.
+{% endblock %}
+
+
+{% block content %}
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleibt noch 1 Minute." +
+                " Bitte treffen Sie eine Auswahl oder das Experiment wird beendet.");
+        },
+            parseInt("{{ Constants.soft_timeout }}")
+    );
+    </script>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

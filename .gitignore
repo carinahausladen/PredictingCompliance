@@ -1,0 +1,34 @@
+# Python caches
+__pycache__/
+**.ipynb_checkpoints
+
+# macOS files
+**.DS_Store
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Pycharm project settings
+.idea
+
+# all files in data/interim except the gitkeep files
+**/data/interim/*
+!**/data/interim/.gitkeep
+
+# magnitude files (as they are large)
+**.magnitude
+
+*.pyc
+*.Rhistory
+*cache
+*_files

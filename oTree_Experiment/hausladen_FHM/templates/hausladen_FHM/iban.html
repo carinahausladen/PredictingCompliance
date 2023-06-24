@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Ihre Kontodaten
+{% endblock %}
+
+
+
+{% block content %}
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleibt noch 1 Minute." +
+                " Bitte treffen Sie eine Auswahl oder das Experiment wird beendet.");
+        },
+            parseInt("{{ Constants.soft_timeout }}")
+    );
+    </script>
+
+    <p>
+        Da es sich um ein Online-Experiment handelt, erfolgt die Auszahlung nicht bar, sondern per Banküberweisung.
+        Hierfür benötigen wir Ihre Kontodaten.
+        Bitte beachten Sie, dass Zahlungen nur an Banken innerhalb der EU durchgeführt werden.
+        Alle Daten werden verschlüsselt übermittelt und sind nur dem Studienleiter zugänglich.
+    </p>
+
+    {% formfields %}
+    {% next_button %}
+
+{% endblock %}

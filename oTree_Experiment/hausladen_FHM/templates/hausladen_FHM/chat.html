@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Chat
+{% endblock %}
+
+
+
+{% block content %}
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleibt noch 1 Minute." +
+                " Bitte beenden Sie den Chat.");
+        },
+            6*60*1000
+    );
+    </script>
+
+    <p>
+        Sie können nun 7 Minuten lang mit dem anderen Mitarbeiter Ihrer Zweiergruppe chatten. <br>
+        Drücken Sie "Senden", damit der Andere Ihre Nachricht erhält. <br>
+        Nachdem Sie auf "Chat beenden" gedrückt haben, können Sie Ihre Überstunden angeben.
+    </p>
+
+    {% chat nickname="Mitarbeiter" %}
+
+
+    <br>
+    <br>
+    Haben Sie den anderen Mitarbeiter Ihrer Zweiergruppe informiert, dass Sie den Chat verlassen?
+    Wenn ja, dann clicken Sie auf:
+    <button class="otree-btn-next btn btn-primary"> Chat beenden </button>
+
+{% endblock %}

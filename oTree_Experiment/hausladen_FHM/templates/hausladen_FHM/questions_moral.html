@@ -1,0 +1,136 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Bitte geben Sie an, welche Gefühle Sie während des Experimentes empfunden haben.
+{% endblock %}
+
+{% block content %}
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleibt noch 1 Minute." +
+                " Bitte treffen Sie eine Auswahl oder das Experiment wird beendet.");
+        },
+            parseInt("{{ Constants.soft_timeout }}")
+    );
+    </script>
+
+    <h5>
+        Haben Sie Freude empfunden?
+    </h5>
+    <div>
+        <tr>
+            <td> trifft überhaupt nicht zu </td>
+            <td><input type="radio" name="moral_freude" value="1" /></td>
+            <td><input type="radio" name="moral_freude" value="2" /></td>
+            <td><input type="radio" name="moral_freude" value="3" /></td>
+            <td><input type="radio" name="moral_freude" value="4" /></td>
+            <td><input type="radio" name="moral_freude" value="5" /></td>
+            <td><input type="radio" name="moral_freude" value="6" /></td>
+            <td><input type="radio" name="moral_freude" value="7" /></td>
+            <td><input type="radio" name="moral_freude" value="8" /></td>
+            <td><input type="radio" name="moral_freude" value="9" /></td>
+            <td><input type="radio" name="moral_freude" value="10" /></td>
+            <td> trifft vollkommen zu </td>
+        </tr>
+    </div>
+
+    <br>
+
+
+    <h5>
+        Haben Sie Ärger empfunden?
+    </h5>
+
+    <div>
+        <tr>
+            <td> trifft überhaupt nicht zu </td>
+            <td><input type="radio" name="moral_aerger" value="1" /></td>
+            <td><input type="radio" name="moral_aerger" value="2" /></td>
+            <td><input type="radio" name="moral_aerger" value="3" /></td>
+            <td><input type="radio" name="moral_aerger" value="4" /></td>
+            <td><input type="radio" name="moral_aerger" value="5" /></td>
+            <td><input type="radio" name="moral_aerger" value="6" /></td>
+            <td><input type="radio" name="moral_aerger" value="7" /></td>
+            <td><input type="radio" name="moral_aerger" value="8" /></td>
+            <td><input type="radio" name="moral_freude" value="9" /></td>
+            <td><input type="radio" name="moral_aerger" value="10" /></td>
+            <td> trifft vollkommen zu </td>
+        </tr>
+    </div>
+
+    <br>
+
+    <h5>
+        Haben Sie Angst empfunden?
+    </h5>
+
+    <div>
+        <tr>
+            <td> trifft überhaupt nicht zu </td>
+            <td><input type="radio" name="moral_angst" value="1" /></td>
+            <td><input type="radio" name="moral_angst" value="2" /></td>
+            <td><input type="radio" name="moral_angst" value="3" /></td>
+            <td><input type="radio" name="moral_angst" value="4" /></td>
+            <td><input type="radio" name="moral_angst" value="5" /></td>
+            <td><input type="radio" name="moral_angst" value="6" /></td>
+            <td><input type="radio" name="moral_angst" value="7" /></td>
+            <td><input type="radio" name="moral_angst" value="8" /></td>
+            <td><input type="radio" name="moral_angst" value="9" /></td>
+            <td><input type="radio" name="moral_angst" value="10" /></td>
+            <td> trifft vollkommen zu </td>
+        </tr>
+    </div>
+
+    <br>
+
+    <h5>
+        Haben Sie Scham empfunden?
+    </h5>
+
+    <div>
+        <tr>
+            <td> trifft überhaupt nicht zu </td>
+            <td><input type="radio" name="moral_scham" value="1" /></td>
+            <td><input type="radio" name="moral_scham" value="2" /></td>
+            <td><input type="radio" name="moral_scham" value="3" /></td>
+            <td><input type="radio" name="moral_scham" value="4" /></td>
+            <td><input type="radio" name="moral_scham" value="5" /></td>
+            <td><input type="radio" name="moral_scham" value="6" /></td>
+            <td><input type="radio" name="moral_scham" value="7" /></td>
+            <td><input type="radio" name="moral_scham" value="8" /></td>
+            <td><input type="radio" name="moral_scham" value="9" /></td>
+            <td><input type="radio" name="moral_scham" value="10" /></td>
+            <td> trifft vollkommen zu </td>
+        </tr>
+    </div>
+
+    <br>
+
+    <h5>
+        Haben Sie Schuld empfunden?
+    </h5>
+
+    <div>
+        <tr>
+            <td> trifft überhaupt nicht zu </td>
+            <td><input type="radio" name="moral_schuld" value="1" /></td>
+            <td><input type="radio" name="moral_schuld" value="2" /></td>
+            <td><input type="radio" name="moral_schuld" value="3" /></td>
+            <td><input type="radio" name="moral_schuld" value="4" /></td>
+            <td><input type="radio" name="moral_schuld" value="5" /></td>
+            <td><input type="radio" name="moral_schuld" value="6" /></td>
+            <td><input type="radio" name="moral_schuld" value="7" /></td>
+            <td><input type="radio" name="moral_schuld" value="8" /></td>
+            <td><input type="radio" name="moral_schuld" value="9" /></td>
+            <td><input type="radio" name="moral_schuld" value="10" /></td>
+            <td> trifft vollkommen zu </td>
+        </tr>
+    </div>
+
+    <br>
+
+    {% next_button %}
+
+{% endblock %}

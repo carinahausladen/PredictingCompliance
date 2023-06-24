@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+   Spezifische Instruktionen
+{% endblock %}
+
+
+
+{% block content %}
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleiben noch 3 Minuten." +
+                "Bitte treffen Sie eine Auswahl oder das Experiment wird beendet.");
+        },
+            parseInt("{{ Constants.soft_timeout }}")
+    );
+    </script>
+
+{% include Constants.instructions_template %}
+
+<button class="otree-btn-next btn btn-primary"> VERSTANDEN </button>
+{% endblock %}

@@ -1,0 +1,25 @@
+participant.id_in_session,participant.code,participant.label,participant._is_bot,participant._index_in_pages,participant._max_page_index,participant._current_app_name,participant._current_page_name,participant.time_started,participant.visited,participant.mturk_worker_id,participant.mturk_assignment_id,participant.payoff,player.id_in_group,player.classifier_result_player,player.control_correct,player.hours_stated,player.contr_task_0,player.contr_partner_0,player.contr_50noaudit_0,player.contr_50audit_0,player.contr_65noaudit_0,player.contr_35audit_0,player.contr_task,player.contr_partner,player.contr_50noaudit,player.contr_50audit,player.contr_65noaudit,player.contr_35audit,player.payoff,group.id_in_subsession,group.classifier_result,group.random_prob,group.treat,subsession.round_number,session.code,session.label,session.experimenter_name,session.mturk_HITId,session.mturk_HITGroupId,session.comment,session.is_demo
+1,jbtfyvb1,,0,0,19,,,,0,,,0.00,1,,,,,,,,,,,,,,,,0.00,1,,,random,1,udjtm36l,,,,,,1
+2,eeclhofb,,0,0,19,,,,0,,,0.00,2,,,,,,,,,,,,,,,,0.00,1,,,random,1,udjtm36l,,,,,,1
+3,nbeiylcb,,0,0,19,,,,0,,,0.00,1,,,,,,,,,,,,,,,,0.00,2,,,random,1,udjtm36l,,,,,,1
+4,16ew8geo,,0,0,19,,,,0,,,0.00,2,,,,,,,,,,,,,,,,0.00,2,,,random,1,udjtm36l,,,,,,1
+1,gaboekyg,PC_1,0,19,19,stage_2,outro,2019-12-17 08:39:54.655245+00:00,1,,,9.80,1,0,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0.00,1,,0,random,1,egreu8qc,,,,,,0
+2,7nlpbkg1,PC_2,0,19,19,stage_2,outro,2019-12-17 08:40:03.667046+00:00,1,,,9.80,2,0,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0.00,1,,0,random,1,egreu8qc,,,,,,0
+3,esrn4a42,PC_3,0,19,19,stage_2,outro,2019-12-17 08:40:10.368150+00:00,1,,,8.70,1,1,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0.00,2,,1,random,1,egreu8qc,,,,,,0
+4,gvia47in,PC_4,0,19,19,stage_2,outro,2019-12-17 08:40:21.093121+00:00,1,,,8.60,2,1,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0.00,2,,1,random,1,egreu8qc,,,,,,0
+1,pnejm01q,,0,0,19,,,,0,,,0.00,1,,,,,,,,,,,,,,,,0.00,1,,,random,1,qfvz7qaq,,,,,,1
+2,07geblqm,,0,0,19,,,,0,,,0.00,2,,,,,,,,,,,,,,,,0.00,1,,,random,1,qfvz7qaq,,,,,,1
+3,gcu6wp0c,,0,0,19,,,,0,,,0.00,1,,,,,,,,,,,,,,,,0.00,2,,,random,1,qfvz7qaq,,,,,,1
+4,uy44xhd7,,0,0,19,,,,0,,,0.00,2,,,,,,,,,,,,,,,,0.00,2,,,random,1,qfvz7qaq,,,,,,1
+1,tozbybl6,PC_12,0,19,19,stage_2,outro,2019-12-17 12:04:28.649300+00:00,1,,,11.00,1,1,0,20,1,2,60,60,70,30,1,2,60,60,70,50,0.00,1,,1,random,1,ooopruyi,,,,,,0
+2,de063mau,PC_8,0,19,19,stage_2,outro,2019-12-17 12:04:28.642600+00:00,1,,,12.00,2,1,1,20,1,2,60,60,70,50,,,,,,,0.00,1,,1,random,1,ooopruyi,,,,,,0
+3,8k0ek7on,PC_1,0,19,19,stage_2,outro,2019-12-17 12:04:28.652344+00:00,1,,,6.00,1,1,1,60,1,2,60,60,70,50,,,,,,,0.00,2,,1,random,1,ooopruyi,,,,,,0
+4,hhiphqgy,PC_3,0,19,19,stage_2,outro,2019-12-17 12:04:28.687547+00:00,1,,,5.00,2,1,0,60,1,2,60,60,70,30,1,2,60,60,70,50,0.00,2,,1,random,1,ooopruyi,,,,,,0
+5,4mnz2x90,PC_9,0,19,19,stage_2,outro,2019-12-17 12:04:28.765565+00:00,1,,,12.00,1,0,0,30,1,2,60,60,60,50,1,2,60,60,70,50,0.00,3,,0,random,1,ooopruyi,,,,,,0
+6,e6ygkxfp,PC_13,0,19,19,stage_2,outro,2019-12-17 12:04:28.752133+00:00,1,,,12.00,2,0,0,30,1,2,70,70,80,60,1,2,60,60,70,50,0.00,3,,0,random,1,ooopruyi,,,,,,0
+7,vilhb3jc,PC_10,0,19,19,stage_2,outro,2019-12-17 12:04:28.773436+00:00,1,,,9.00,1,1,1,30,1,2,60,60,70,50,,,,,,,0.00,4,,1,random,1,ooopruyi,,,,,,0
+8,ax89w8tk,PC_7,0,19,19,stage_2,outro,2019-12-17 12:04:28.843338+00:00,1,,,10.00,2,1,0,10,1,2,60,60,70,60,1,2,60,60,70,50,0.00,4,,1,random,1,ooopruyi,,,,,,0
+9,5oeu51fv,PC_14,0,19,19,stage_2,outro,2019-12-17 12:04:28.841327+00:00,1,,,16.00,1,1,1,60,1,2,60,60,70,50,,,,,,,0.00,5,,1,random,1,ooopruyi,,,,,,0
+10,xn95a270,PC_2,0,19,19,stage_2,outro,2019-12-17 12:04:28.917178+00:00,1,,,16.00,2,1,1,60,1,2,60,60,70,50,,,,,,,0.00,5,,1,random,1,ooopruyi,,,,,,0
+11,c2rj2tut,PC_4,0,19,19,stage_2,outro,2019-12-17 12:04:28.925902+00:00,1,,,10.00,1,0,0,10,1,2,60,60,60,60,1,2,60,60,70,50,0.00,6,,0,random,1,ooopruyi,,,,,,0
+12,4m2h93o6,PC_6,0,19,19,stage_2,outro,2019-12-17 12:04:28.964639+00:00,1,,,11.00,2,0,1,10,1,2,60,60,70,50,,,,,,,0.00,6,,0,random,1,ooopruyi,,,,,,0

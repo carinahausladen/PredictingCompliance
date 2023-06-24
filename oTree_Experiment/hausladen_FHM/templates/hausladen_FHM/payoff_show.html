@@ -1,0 +1,93 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Ergebnis
+{% endblock %}
+
+
+
+{% block content %}
+
+    <script>
+        setTimeout(
+        function () {
+            alert("Für diese Seite verbleibt noch 1 Minute." +
+                " Bitte treffen Sie eine Auswahl oder das Experiment wird beendet.");
+        },
+            parseInt("{{ Constants.soft_timeout }}")
+    );
+    </script>
+
+    <p>
+    Sie haben {{ player.hours_stated }} Überstunde(n) angegeben. <br>
+    Ihre Angabe {% if player.same_hours %} stimmt {% else %} stimmt nicht {% endif %} mit der des anderern Mitarbeiters Ihrer Zweiergruppe überein. <br>
+    Letztendlich wurden Sie und der andere Mitarbeiter Ihrer Zweiergruppe {% if player.audited_both %} {% else %} nicht {% endif %} kontrolliert. <br>
+    </p>
+
+    <br>
+
+    <p>
+        Sie haben folgende Lab-Punkte verdient:
+    </p>
+
+    <table>
+        <tr>
+            <th> Fixe Vergütung </th>
+            <td>{{ Constants.income_fix }}</td>
+        </tr>
+        {% if player.audited_both %}
+            <tr>
+                <th> Tatsächliche Überstunden </th>
+                <td>{{ Constants.actual_surplus_hours}}</td>
+            </tr>
+            <tr>
+                <th> Strafe </th>
+                <td>{{ player.fine }}</td>
+            </tr>
+        {% else %}
+        <tr>
+            <th> Angegebene Überstunden </th>
+            <td>{{ player.hours_stated }}</td>
+        </tr>
+        {% endif %}
+        <tr>
+            <td> Gesamt </td>
+            <th>{{ player.lab_points }}</th>
+        </tr>
+    </table>
+
+    <br>
+
+    <p>
+        Ihre finale Auszahlung berechnet sich wie folgt:
+    </p>
+
+    <table>
+        <tr>
+            <th> Lab-Punkte in Euro umgerechnet </th>
+            <td>{{ player.points_euro | c }}</td>
+        </tr>
+
+        <tr>
+            <th> Verständnisfragen </th>
+            <td>{{ player.ctr_euro | c }}</td>
+        </tr>
+        <tr>
+            <th> Show-up </th>
+            <td>{{ Constants.showup | c}}</td>
+        </tr>
+        <tr>
+            <td> Gesamt </td>
+            <th>{{ player.payoff | c }}</th>
+        </tr>
+
+
+    </table>
+
+    <br>
+
+    {% next_button %}
+
+
+{% endblock %}
