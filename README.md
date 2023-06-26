@@ -1,10 +1,19 @@
 # PredictingCompliance
-This repository provides the oTree and data analysis code to reproduce the paper's findings: "Predicting compliance: Leveraging chat data for supervised classification in experimental research".
+This repository provides the oTree and data analysis code to reproduce the paper's findings: "Predicting compliance: Leveraging chat data for supervised classification in experimental research."
 
+# Citation
 If you use the data and or code provided by this repository, please cite the resource appropriately as follows: 
 
-Hausladen, C. I., Fochmann, M., & Mohr, P. (2023, February 26). *Predicting Compliance: Leveraging Chat Data for Supervised Classification in Experimental Research*. Retrieved from [SSRN](https://ssrn.com/abstract=4371333)
-
+```bibtex
+@article{hausladen2023predicting,
+  title={Predicting compliance: Leveraging chat data for supervised classification in experimental research},
+  author={Hausladen, Carina Ines and Fochmann, Martin and Mohr, Peter},
+  journal={Available at SSRN 4371333},
+  year={2023}
+}
+```
+Direct Link to Preprint: [Predicting Compliance: Leveraging Chat Data for Supervised Classification in Experimental Research](https://ssrn.com/abstract=4371333) 
+or [DOI](https://dx.doi.org/10.2139/ssrn.4371333)
 
 # Structure
 
