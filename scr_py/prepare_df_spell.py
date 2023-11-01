@@ -1,5 +1,4 @@
 import multiprocessing as mp
-import os
 
 import pandas as pd
 from spellchecker import SpellChecker
@@ -36,6 +35,8 @@ def spellcheck_chat(df):
     df['Chat'] = df['Chat'].apply(lambda x: [result_zip[word] if word in result_zip else word for word in x])
     df['Chat'] = df['Chat'].apply(lambda x: " ".join(x))
 
+    print("Number of unique words:", len(words_deduplicate))
+    print("Number of corrected words:", len(result_zip))
     return df
 
 
@@ -43,4 +44,6 @@ df_checked = spellcheck_chat(df_chat)
 df_checked.to_json('data/df_chat_spllchckd.json')
 df_checked.to_csv('data/df_chat_spllchckd.csv')
 
-# len(set(spell.split_words(chat_group_str)))  # length of unique words
+
+
+
