@@ -221,7 +221,7 @@ class DocModel(object):
         print('idx: ' + str(idx))
         doc = [doc for doc in self.docs if doc.tags[0] == idx]
         inferred_vec = self.model.infer_vector(doc[0].words)
-        print(self.model.docvecs.most_similar([inferred_vec]))  # wrap vec in a list
+        print(self.model.dv.most_similar([inferred_vec]))  # wrap vec in a list
 
 
 class MeanEmbeddingVectorizer(object):
@@ -239,21 +239,17 @@ class MeanEmbeddingVectorizer(object):
 
     def word_average(self, sent):
         """
-        Compute average word vector for a single doc/sentence.
-
+        Compute the average word vector for a single doc/sentence.
 
         :param sent: list of sentence tokens
-        :return:
-            mean: float of averaging word vectors
+        :return: mean vector of dimension (1, vector_size) for sentence tokens
         """
         mean = []
         for word in sent:
-            if word in self.word_model.wv.vocab:
-                mean.append(self.word_model.wv.get_vector(word))
-
+            if word in self.word_model.wv.key_to_index:
+                mean.append(self.word_model.wv[word])
         if not mean:  # empty words
-            # If a text is empty, return a vector of zeros.
-            logging.warning("cannot compute average owing to no vector for {}".format(sent))
+            # If a review is empty, return a vector of zeros.
             return np.zeros(self.vector_size)
         else:
             mean = np.array(mean).mean(axis=0)
@@ -323,7 +319,7 @@ class TfidfEmbeddingVectorizer(object):
 
         mean = []
         for word in sent:
-            if word in self.word_model.wv.vocab:
+            if word in self.word_model.wv.key_to_index:
                 mean.append(self.word_model.wv.get_vector(word) * self.word_idf_weight[word])  # idf weighted
 
         if not mean:  # empty words

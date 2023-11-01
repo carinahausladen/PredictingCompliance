@@ -69,7 +69,6 @@ y_vars = {
 X_vars = {
     "chat_subject": 'Chat_subject',
     "chat_group": 'Chat_group_all',
-   "chat_group_label": 'Chat_group_label',
     "label_group": 'Tags',
 }
 

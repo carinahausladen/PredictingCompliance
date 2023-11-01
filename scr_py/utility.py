@@ -68,7 +68,7 @@ def run_log_reg(train_features, test_features, y_train, y_test, alpha=1e-4, conf
                 verbose=True):
     metrics = list()
     for _ in range(10):
-        log_reg = SGDClassifier(loss='log', alpha=alpha, n_jobs=-1, penalty='l2')
+        log_reg = SGDClassifier(loss='log_loss', alpha=alpha, n_jobs=-1, penalty='l2')
         log_reg.fit(train_features, y_train)
         y_test_prob = log_reg.predict_proba(test_features)[:, 1]
         metrics.append(
