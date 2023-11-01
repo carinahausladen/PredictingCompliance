@@ -1,4 +1,5 @@
 'analysing the chat texts wrt belief, risk and joy. For the latter, Rauhs dictionary is used.'
+
 rm(list=ls())
 library(tm)
 library(ggplot2)
@@ -39,7 +40,7 @@ kwic(corp, pattern = "schön", window = 3, valuetype = "glob")
 kwic(corp, pattern = "cool*", window = 3, valuetype = "glob")
 
 
-#source("create_Rauh.R") # to create data_dictionary_Rauh
+source("create_Rauh.R") # to create data_dictionary_Rauh
 positive_words <- data_dictionary_Rauh$positive
 
 df_chat_hours <- df_chat_hours %>%
