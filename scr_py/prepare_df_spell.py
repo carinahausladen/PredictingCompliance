@@ -6,19 +6,17 @@ from spellchecker import SpellChecker
 from tqdm import tqdm
 
 'note that parallel version only works in Ipython console'
-
 spell = SpellChecker(language='de')
 
-os.chdir("/Users/carinahausladen/FHM/analysis")
-df_chat = pd.read_excel(r'data/Chat_Kodierung_Median.xlsx', sheet_name="Chats")  # includes text
+df_chat = pd.read_excel(r'data/Fochmann/Chats_coded.xlsx')  # includes text
 
 
-# df_chat['Chat']
-# df = df_chat
+df_chat['Chat']
+df = df_chat #for testing
 def spellcheck_chat(df):
     chat_cols = ['Chat']
     df.loc[:, chat_cols] = df.loc[:, chat_cols].fillna('kein_Chat').astype(str)
-    df.loc[:, chat_cols] = df.loc[:, chat_cols].applymap(lambda x: x if x != "" else "kein_Chat")
+    df[chat_cols] = df[chat_cols].apply(lambda col: col.map(lambda x: x if x != "" else "kein_Chat"))
 
     chat_group_str = ' '.join(map(str, df_chat['Chat']))  # making one string out of all chat messages per group
     words = spell.split_words(chat_group_str)

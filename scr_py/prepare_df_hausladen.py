@@ -1,9 +1,6 @@
-import os
-
 import pandas as pd
 
-# datasets are generated via combine_data.R
-df_hours = pd.read_csv('data/hours_stated.csv')
+df_hours = pd.read_csv('data/hours_stated.csv') # created by combine.R
 df_chat = pd.read_csv('data/chat.csv')
 
 
