@@ -123,7 +123,7 @@ def avg_embdngs(documents, embedings, num_trials=10):
     return np.array(vectors)
 
 
-df.new_docs = [x if len(x) != 0 else "kein_chat" for x in df.new_docs]
+df.new_docs = [x if len(x) != 0 else "keinchat" for x in df.new_docs]
 X_w2v_pre = avg_embdngs(df.new_docs, w2v)
 
 train_idx, test_idx = str_grp_splt(df_prep,
