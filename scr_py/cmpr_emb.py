@@ -27,10 +27,8 @@ from pymagnitude import *
 
 df = pd.read_csv('data/df_chat_socio.csv')
 df_prep, df = prepare_docs(df, y="honestmean", X="Chat_subject", dv="declared_income_final")
-df.new_docs = [x if len(x) != 0 else "kein_chat" for x in df.new_docs]
 ros = RandomOverSampler(random_state=42, sampling_strategy='minority')  # oversampling!
-
-df_prep["honestmean"].value_counts()  # 1: minority = honest people!!
+df_prep["honestmean"].value_counts()  # 1: minority = compliance
 
 ##############
 # embeddings #
@@ -253,14 +251,15 @@ lst = [list(m_bow), list(m_tfidf[0]),
        list(m_glove_pre_smpl[0]), list(m_glove_pre_tfidf[0]),
        list(m_ft_own), list(m_dm_doc_vec[0])]
 
-df_results = pd.DataFrame(lst, columns=['f1', 'pr', 're', 'AUC', 'acc'], dtype=float)
-df_results.rename(index={0: 'bow', 1: 'tfidf',
-                         2: 'w2v (own, smpl)', 3: 'w2v (own, tfidf)',
-                         4: 'w2v (pre, smpl)', 5: 'w2v (pre, tfidf)',
-                         6: 'glove (pre, smpl)', 7: 'glove (pre, tfidf)',
-                         8: 'ft (own, smpl)', 9: 'dm_doc_vec'}, inplace=True)
-df_results = df_results.sort_values(by='f1', ascending=False)
+df_results = pd.DataFrame(lst, columns=['f1score', 'precision', 'recall', 'AUC', 'accuracy'], dtype=float)
+df_results=df_results*100
+df_results.rename(index={0: 'bag of words', 1: 'bag of words (tf-idf)',
+                         2: 'Word2Vec (own, avg)', 3: 'Word2Vec (own, tf-idf)',
+                         4: 'Word2Vec (pre, avg)', 5: 'Word2Vec (pre, tf-idf)',
+                         6: 'GloVe (pre, avg)', 7: 'GloVe (pre, tf-idf)',
+                         8: 'fastText (own, avg)', 9: 'Doc2Vec'}, inplace=True)
+df_results = df_results.sort_values(by='f1score', ascending=False)
 df_results.round(decimals=3).to_latex(buf="figures/embdgs_over_mean.tex")
-print(df_results.to_latex(float_format="{:0.3f}".format))
+print(df_results.to_latex(float_format="{:0.1f}".format))
 
 

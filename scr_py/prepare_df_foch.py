@@ -7,48 +7,60 @@ df_socio = pd.read_excel(r'data/Fochmann/Tax_Evasion_in_Groups.xls')  # socio-de
 df_chat = pd.read_excel(r'data/Fochmann/Chats_coded.xlsx')  # text
 df_chat_splchckd = pd.read_json(r'data/df_chat_spllchckd.json')  # text spellchecked
 
+columns_to_sum = [
+ 'Money - pro honesty', 'Money - pro lying', 'Steuern allgemein',
+ 'argument für Steuern (pro honesty)', 'argument gegen Steuern (pro lying)',
+ 'Risk - allgemein', 'Risk - pro honesty', 'Risk - pro lying',
+ 'Honesty - allgemein', 'Honesty - pro honesty', 'Honesty - pro lying',
+ 'Zahlenvorschlag - allgemein', 'Zahlenvorschlag pro honesty',
+ 'Zahlenvorschlag pro lying', 'Previous Strategy - keep  - pro honesty',
+ 'Previous Strategy - keep - pro lying', 'Previous Strategy - change - pro honesty',
+ 'Previous Strategy - change - pro lying', 'Realität/Spiel',
+ 'Steuergerechtigkeit', 'Steuerehrlichkeit', 'argument insecurity - allgemein',
+ 'argument insecurity honest', 'argument insecurity lie', 'argument rules - allgemein',
+ 'argument rules yes', 'argument rules no', 'argument others - allgemein',
+ 'argument others honest', 'argument others lie', 'argument consequences - allgemein',
+ 'consequences positive', 'consequences negative', 'taxes_new']
+
+
+#df_chat = df_chat_splchckd
 def prepare(df_chat, df_socio):
     ########
     # CHAT #
     ########
     df_chat = df_chat.sort_values(by=['Group_ID_simuliert', 'Message_Nr'])  # important for bigrams!
 
+    df_chat['Chat'] = df_chat['Chat'].fillna('')
+    df_chat['Chat'] = df_chat['Chat'].apply(lambda x: ' '.join(map(str, x)) if isinstance(x, list) else str(x))
+
     # chat, subject, all text messages
     df_chat_subj = df_chat.groupby(['Group_ID_simuliert', 'Subject_ID', 'Period'])['Chat'].apply(list).to_frame()
     df_chat_subj.rename(columns={'Chat': 'Chat_subject'}, inplace=True)
     df_chat_subj['Chat_subject'] = df_chat_subj['Chat_subject'].str.join(' ')
+    df_chat_subj['Chat_subject'] = df_chat_subj['Chat_subject'].fillna('keinchat') #in some rounds there was no chat
+    df_chat_subj['Chat_subject'] = df_chat_subj['Chat_subject'].apply(lambda x: x if x != "" else "keinchat")
 
     # chat, group, all text messages
     df_chat_group = df_chat.groupby(['Group_ID_simuliert', 'Period'])['Chat'].apply(list).to_frame()
     df_chat_group.rename(columns={'Chat': 'Chat_group_all'}, inplace=True)
     df_chat_group['Chat_group_all'] = df_chat_group['Chat_group_all'].str.join(' ')
+    df_chat_group['Chat_group_all'] = df_chat_group['Chat_group_all'].fillna('keinchat')
+    df_chat_group['Chat_group_all'] = df_chat_group['Chat_group_all'].apply(lambda x: x if x != "" else "keinchat")
 
     # chat, group, only text with label
     df_chat_w_label = df_chat.copy()
-    col_list = list(df_chat_w_label)[11:df_chat_w_label.shape[1]]
-    df_chat_w_label['sums'] = df_chat[col_list].sum(axis=1)
+    df_chat_w_label['sums'] = df_chat_w_label[columns_to_sum].sum(axis=1)
     df_chat_w_label = df_chat_w_label.loc[df_chat_w_label['sums'] > 0]  # only those chat w label!
-
     df_chat_w_label = df_chat_w_label.groupby(['Group_ID_simuliert', 'Period'])['Chat'].apply(list).to_frame()  # group
     df_chat_w_label.rename(columns={'Chat': 'Chat_group_label'}, inplace=True)
     df_chat_w_label['Chat_group_label'] = df_chat_w_label['Chat_group_label'].str.join(' ')
-
-    # label (not text-messages!), group
-    df_help = df_chat.iloc[:, 11:]  # select only label-columns
-    labels = []
-    for index, row in df_help.iterrows():
-        labels.append((df_help.loc[index] == 1)[lambda x: x].index.tolist())
-    df_label = df_chat.copy()
-    df_label['Tags'] = labels
-
-    df_label = df_label.groupby(['Group_ID_simuliert', 'Period'])['Tags'].apply(list).to_frame()  # group
-    df_label['Tags'] = df_label['Tags'].apply(lambda x: [item for sublist in x for item in sublist])  # flat list
-    df_label['Tags'] = df_label['Tags'].str.join(', ')
+    df_chat_w_label['Chat_group_label'] = df_chat_w_label['Chat_group_label'].fillna('keinchat')
+    df_chat_w_label['Chat_group_label'] = df_chat_w_label['Chat_group_label'].apply(lambda x: x if x != "" else "keinchat")
 
     # join df_chats
     df_chat_comb = df_chat_subj.join(df_chat_group)
     df_chat_comb = df_chat_comb.join(df_chat_w_label)
-    df_chat_comb = df_chat_comb.join(df_label)
+    df_chat_comb['Chat_group_label'] = df_chat_comb['Chat_group_label'].fillna('keinchat')
 
     #########
     # SOCIO #
@@ -79,6 +91,9 @@ def prepare(df_chat, df_socio):
     #########
     # merge chat and socio
     df_all = df_socio.join(df_chat_comb)
+    df_all['Chat_subject'] = df_all['Chat_subject'].fillna('keinchat') #there are rounds with no chat
+    df_all['Chat_group_all'] = df_all['Chat_group_all'].fillna('keinchat')
+    df_all['Chat_group_label'] = df_all['Chat_group_label'].fillna('keinchat')
 
     # select single or group chat based on agree
     df_all['Chat_sel'] = df_all['Chat_group_all'].where(df_all['equal'], other=df_all['Chat_subject'])

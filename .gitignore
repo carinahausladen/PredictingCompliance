@@ -24,6 +24,10 @@ venv.bak/
 # all files in data/interim except the gitkeep files
 **/data/interim/*
 !**/data/interim/.gitkeep
+data/glove.txt
+data/w2v_size.txt
+data/w2v.txt
+data/glove.word2vec
 
 # magnitude files (as they are large)
 **.magnitude
@@ -32,3 +36,5 @@ venv.bak/
 *.Rhistory
 *cache
 *_files
+
+fastText

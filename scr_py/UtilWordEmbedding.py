@@ -131,9 +131,11 @@ class DocPreprocess(object):
         self.nlp = nlp  # spacy nlp object
         self.stop_words = stop_words  # spacy.lang.en.stop_words.STOP_WORDS
         self.docs = docs  # docs must be either list or numpy array or series of docs
-        self.labels = labels  # labels must be list or or numpy array or series of labels
+        self.labels = labels  # labels must be list or numpy array or series of labels
         self.doc_ids = np.arange(len(docs))
-        self.simple_doc_tokens = [gensim.utils.simple_preprocess(doc, deacc=True) for doc in self.docs]
+
+        #self.simple_doc_tokens = [gensim.utils.simple_preprocess(doc, deacc=True) for doc in self.docs]
+        self.simple_doc_tokens = [self.tokenize_and_preprocess(doc) for doc in self.docs]
 
         if build_bi:
             self.bi_detector = self.build_bi_detect(self.simple_doc_tokens, min_count=min_count, threshold=threshold)
@@ -142,6 +144,11 @@ class DocPreprocess(object):
             self.new_docs = self.make_simple_doc(self.simple_doc_tokens)
         self.doc_words = [self.lemmatize(doc, allowed_postags=allowed_postags) for doc in self.new_docs]
         self.tagdocs = [TaggedDocument(words=words, tags=[tag]) for words, tag in zip(self.doc_words, self.doc_ids)]
+
+    def tokenize_and_preprocess(self, doc): #I changed from using the gensim simple preprocess to spacy and therefore needed this def so if i change back i no longer need
+        doc = self.nlp(doc)
+        tokens = [token.text.lower() for token in doc if token.text not in self.stop_words and token.text.isalpha()]
+        return tokens
 
     def build_bi_detect(self, simple_doc_tokens, min_count, threshold):
         bi_ = gensim.models.phrases.Phrases(simple_doc_tokens, min_count=min_count, threshold=threshold)
@@ -165,7 +172,7 @@ class DocPreprocess(object):
 
     def lemmatize(self, doc, allowed_postags):
         """
-        Lemmatize words and remove stop_words.
+        Lemmatize words, convert to lowercase, and remove stop words.
 
         :param doc: text
         :param allowed_postags: list of pos tags
@@ -173,8 +180,8 @@ class DocPreprocess(object):
             list of tokens
         """
         doc = self.nlp(doc)
-        tokens = [token.lemma_ for token in doc if (
-                token.pos_ in allowed_postags) and (token.text not in self.stop_words)]
+        tokens = [token.lemma_.lower() for token in doc if (
+                token.pos_ in allowed_postags) and (token.text.lower() not in self.stop_words)]
         return tokens
 
 

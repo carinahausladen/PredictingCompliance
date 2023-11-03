@@ -23,13 +23,10 @@ def prepare(df_chat, df_hours):
     # join df_chats
     df_chat_comb = df_chat_subj.join(df_chat_group)
 
-    #########
     # SOCIO #
     #########
     df_hours = df_hours.set_index(['session.code', 'group.id_in_subsession'])
-
-    # add Column for agreement
-    df_hours_temp = df_hours.groupby(['session.code', 'group.id_in_subsession'])['player.hours_stated'].apply(list)
+    df_hours_temp = df_hours.groupby(['session.code', 'group.id_in_subsession'])['player.hours_stated'].apply(list) # add Column for agreement
 
     def checkEqual2(iterator):
         return len(set(iterator)) <= 1
@@ -45,10 +42,14 @@ def prepare(df_chat, df_hours):
     df_hours = df_hours.reset_index()
     df_hours = df_hours.set_index(['participant.code'])
 
+
     df_chat_comb = df_chat_comb.reset_index()
     df_chat_comb = df_chat_comb.set_index(['participant__code'])
 
-    df_all = df_hours.join(df_chat_comb)
+    df_all = df_hours.join(df_chat_comb) #324 #there a five people from whom we have no chat
+    df_all['Chat_subject'] = df_all['Chat_subject'].fillna('keinchat') #there are rounds with no chat
+    df_all['Chat_group_all'] = df_all['Chat_group_all'].fillna('keinchat')
+    df_all['channel'] = df_all['channel'].fillna('unknown')
 
     # select single or group chat based on agree
     df_all['Chat_sel'] = df_all['Chat_group_all'].where(df_all['equal'], other=df_all['Chat_subject'])

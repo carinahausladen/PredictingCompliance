@@ -56,20 +56,20 @@ df_spllchckd = prepare_X_y(df_spllchckd, dv="declared_income_final")  # I need t
 
 # define loop vars
 df_vars = {
-    "duplicated": df,
+    "original": df,
     "spell_checked": df_spllchckd
 }
 
 y_vars = {
-     "<1000": 'honest1000',
-    "<500": 'honest500',
+    "<1000": 'honest1000',
+    "<median": 'honest500',
     "<mean": 'honestmean',
 }
 
 X_vars = {
     "chat_subject": 'Chat_subject',
     "chat_group": 'Chat_group_all',
-    "label_group": 'Tags',
+    "chat_w_label": 'Tags',
 }
 
 
@@ -85,13 +85,13 @@ def prepare_feat(data, df_vars, y_vars, X_vars):
     start = time.time()
     print(name_df, name_y, name_X)
 
-    if name_df == "duplicated":
+    if name_df == "original":
         df = data
     else:
         df = data.drop_duplicates()
 
     # prepare X
-    if not name_X == "label_group":
+    if not name_X == "chat_w_label":
         df_all_docs = DocPreprocess(nlp, stop_words, df[val_X], df[val_y])
         print("finished DocPreprocess")
 
@@ -111,7 +111,7 @@ def prepare_feat(data, df_vars, y_vars, X_vars):
                                        train_share=0.8)
     print("finished split")
 
-    if not name_X == "label_group":
+    if not name_X == "chat_w_label":
         # prepare train/test X, y
         train_X = tfidf_X[train_idx]
         test_X = tfidf_X[test_idx]

@@ -23,6 +23,19 @@ or [DOI](https://dx.doi.org/10.2139/ssrn.4371333)
 - `scr_py` contains Jupyter Notebooks and .html slides with code that trains and evaluates the honesty classifiers. Notebooks draw functions from `utils`.
 - `scr_R` contains code that analyzes the chat data with respect to behavioral concepts.
 
+
+# FastText Compilation
+
+This repository uses FastText. Follow these steps to compile FastText for command-line usage:
+
+1. **Install Dependencies:** Ensure `git`, `make`, and a C++ compiler like `g++` are installed.
+2. **Clone and Compile:**
+   ```bash
+   git clone https://github.com/facebookresearch/fastText.git
+   cd fastText
+   make
+
+
 # Running the oTree experiment
 
 Follow these steps to run the experiment locally:
