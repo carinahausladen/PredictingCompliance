@@ -37,15 +37,15 @@ def prepare(df_chat, df_socio):
     df_chat_subj = df_chat.groupby(['Group_ID_simuliert', 'Subject_ID', 'Period'])['Chat'].apply(list).to_frame()
     df_chat_subj.rename(columns={'Chat': 'Chat_subject'}, inplace=True)
     df_chat_subj['Chat_subject'] = df_chat_subj['Chat_subject'].str.join(' ')
-    df_chat_subj['Chat_subject'] = df_chat_subj['Chat_subject'].fillna('keinchat') #in some rounds there was no chat
-    df_chat_subj['Chat_subject'] = df_chat_subj['Chat_subject'].apply(lambda x: x if x != "" else "keinchat")
+    df_chat_subj['Chat_subject'] = df_chat_subj['Chat_subject'].fillna('kein chat') #in some rounds there was no chat
+    df_chat_subj['Chat_subject'] = df_chat_subj['Chat_subject'].apply(lambda x: x if x != "" else "kein chat")
 
     # chat, group, all text messages
     df_chat_group = df_chat.groupby(['Group_ID_simuliert', 'Period'])['Chat'].apply(list).to_frame()
     df_chat_group.rename(columns={'Chat': 'Chat_group_all'}, inplace=True)
     df_chat_group['Chat_group_all'] = df_chat_group['Chat_group_all'].str.join(' ')
-    df_chat_group['Chat_group_all'] = df_chat_group['Chat_group_all'].fillna('keinchat')
-    df_chat_group['Chat_group_all'] = df_chat_group['Chat_group_all'].apply(lambda x: x if x != "" else "keinchat")
+    df_chat_group['Chat_group_all'] = df_chat_group['Chat_group_all'].fillna('kein chat')
+    df_chat_group['Chat_group_all'] = df_chat_group['Chat_group_all'].apply(lambda x: x if x != "" else "kein chat")
 
     # chat, group, only text with label
     df_chat_w_label = df_chat.copy()
@@ -54,13 +54,13 @@ def prepare(df_chat, df_socio):
     df_chat_w_label = df_chat_w_label.groupby(['Group_ID_simuliert', 'Period'])['Chat'].apply(list).to_frame()  # group
     df_chat_w_label.rename(columns={'Chat': 'Chat_group_label'}, inplace=True)
     df_chat_w_label['Chat_group_label'] = df_chat_w_label['Chat_group_label'].str.join(' ')
-    df_chat_w_label['Chat_group_label'] = df_chat_w_label['Chat_group_label'].fillna('keinchat')
-    df_chat_w_label['Chat_group_label'] = df_chat_w_label['Chat_group_label'].apply(lambda x: x if x != "" else "keinchat")
+    df_chat_w_label['Chat_group_label'] = df_chat_w_label['Chat_group_label'].fillna('kein chat')
+    df_chat_w_label['Chat_group_label'] = df_chat_w_label['Chat_group_label'].apply(lambda x: x if x != "" else "kein chat")
 
     # join df_chats
     df_chat_comb = df_chat_subj.join(df_chat_group)
     df_chat_comb = df_chat_comb.join(df_chat_w_label)
-    df_chat_comb['Chat_group_label'] = df_chat_comb['Chat_group_label'].fillna('keinchat')
+    df_chat_comb['Chat_group_label'] = df_chat_comb['Chat_group_label'].fillna('kein chat')
 
     #########
     # SOCIO #
@@ -91,9 +91,9 @@ def prepare(df_chat, df_socio):
     #########
     # merge chat and socio
     df_all = df_socio.join(df_chat_comb)
-    df_all['Chat_subject'] = df_all['Chat_subject'].fillna('keinchat') #there are rounds with no chat
-    df_all['Chat_group_all'] = df_all['Chat_group_all'].fillna('keinchat')
-    df_all['Chat_group_label'] = df_all['Chat_group_label'].fillna('keinchat')
+    df_all['Chat_subject'] = df_all['Chat_subject'].fillna('kein chat') #there are rounds with no chat
+    df_all['Chat_group_all'] = df_all['Chat_group_all'].fillna('kein chat')
+    df_all['Chat_group_label'] = df_all['Chat_group_label'].fillna('kein chat')
 
     # select single or group chat based on agree
     df_all['Chat_sel'] = df_all['Chat_group_all'].where(df_all['equal'], other=df_all['Chat_subject'])
@@ -108,3 +108,6 @@ df_p.to_csv('data/df_chat_socio.csv')  # only csv can preserve the index
 df_p = prepare(df_chat_splchckd, df_socio)
 df_p.to_json('data/df_chat_socio_splchckd.json')
 df_p.to_csv('data/df_chat_socio_splchckd.csv')
+
+
+count_of_1000_entries = (df_p['declared_income_final'] == 1000).sum()*0.8

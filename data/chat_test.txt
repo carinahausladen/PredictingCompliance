@@ -7,7 +7,7 @@ __label__honest "ich wäre auch eher für 900 ja  Fußball?  ja wär ich für wo
 __label__dishonest "auf jeden fall wenn schon risiko dann immer smiley"
 __label__dishonest "Bleiben wir dabei? Jawohl.... kann so weiter gehen ^^ Nope"
 __label__dishonest "DAS ist doch gut gelaufen Ja würde sagen wir bleiben dabei, oder gibts noch gegenargumente?"
-__label__honest kein_chat
+__label__honest "ich würd sagen wir bleiben dabei. das dauert mir sonst alles zu lange smiley  super , jeder tippt 900 ein und wir gehen zufrieden nach hause. ok bin auch ready für risiko. heisst ? 950 ?  ok mir egal  super ich hab alles verstanden smiley HAHAHAHA ok ich auch  650 also aus die maus"
 __label__honest "Ich wäre sogar bereit, ein bisschen mehr zu riskieren, aber wenn Ihr eh 900 nehmt - auf gehts. Ich hab Hunger \qRisiko\q wäre 650 hätte man 15 Euro oder knapp 19 Euro hehe. ich geb mal 650 ein - macht, wie Ihr mögt. Das passt schon. Cool. Dann klicke ich jetzt auf Verlassen "
 __label__honest "ja is gut smiley  ja 19 euro wäre natürlich schon gut :P gut dann mach ich das auch "
 __label__dishonest "sehr schön ich würde sagen auf ein neues der hat schon genug auch ohne uns smiley irgendwer muss sich ja durchmogeln smiley ja was brauchen die so lange ^^"
@@ -16,9 +16,9 @@ __label__dishonest "Denkt ihr denn nicht mal an den armen Fiskus? smiley Wir sin
 __label__dishonest "was geben wir ein ?  war jetzt nicht der knaller mit den 650 ja 850 ?  dann geben wir mal null ein  auch ne idee also null ?  okay mir latte haben noch 60 sek okay ich will null probieren risiko muss sein  okay jeder \q nullt \q  bis dann prosit"
 __label__dishonest "Statistisch gesehen kommt jetzt keine Konrtolle - mein Risiko wäre demnach größer - aber da das ein Zufallsgenerator ist ... Von mir aus auch 900 Also bei 0 Einkommen hat man 12 Euro bei einer Kontrolle (Kiste Gilden) oder 22 Euro ohne Kontrolle (Kiste Reisdorf und ne Pizza) Bei 850 sind es zwischen 17,75 und 16.25 - das wäre also ziemlich sicher Ich würde die 0 mal ausprobieren, weil ich Gilden auch in Ordnung finde smiley Probieren wir es einmal eben Good luck"
 __label__dishonest "ja sollen wir sonst wieder 900 machen? also ich wäre für 900 aber wir können auch weniger sagen, was meint ihr? ja 850 find ich auch sicherer ok auf unser glück smiley"
-__label__dishonest kein_chat
+__label__dishonest "hello 0 geht ja wohl um risikoaversion im ersten experiment haben sie getestet wie avers wir sind wenn wir jetzt immer 0 wählen würden wir unserer eigenen aversion die wir im ersten experiment gezeigt haben widersprechen aber 0 wäre schon nice smiley wartet mal ist auf jedenfall linear 200?"
 __label__dishonest "hi ja 0 finde ich auch zu krass  oder 200 "
-__label__dishonest kein_chat
+__label__dishonest "tag also hab mal ein bisschen gerechnet und glaube das wenn wir 0 angeben am besten abschneiden leider ohne gewähr wenns kontrolliert wird heisst es das wir 500 abgezogen bekommen (Steuernachzahlung + Strafe dann sind wir bei 500 € das sind 100 Punkte für uns wenn wir nicht kontrolliert werden bekommen wir 200p nur die chance zu kontrolliert werden ist 30% das bedeutet das die erwartung so berechnet wird  0,3 * 100 + 0,7 * 200"
 __label__dishonest "hej Vorschläge? sehe ich auch so ist aber auch heftig. wie wäre es mit 300? 200 fänd ich auch ok ja ok"
 __label__dishonest "HI smiley Ich wäre klar für Risiko und einfach \q0\q Unternehmenseinkommen angeben Super (Y) Perfekt, dann wäre das ja geklärt  Sogar 12 Euro"
 __label__dishonest "Hallo! Also ich wäre dafür 0 Einkommen anzugeben Wenn eine Kontrolle stattfindet sind immer noch 10€ drin"
@@ -27,13 +27,13 @@ __label__dishonest "hi ich habe keine ahnung wenns kontrolliert wird ist doof al
 __label__dishonest "hola ich wäre dafür die gesamtes summer einfach zu versteuern solange es nicht kontrolliert wird ja 120 hätten wir da jeder raus also einfach pokern? musst mal unten bei diesem rechenteil eingeben, der sagt dir alles genau ja wenn jeder 0 angibt ist doch kein chaos"
 __label__honest "na toll bin immer noch für 0 oooder was höheres wenn wir 0 sagen bekommen wir entweder 22 oder 12 euro wenn wir 1000 sagen bekommen wir 17 euro sichere auszahlung von 17 euro ist auch ganz nett plus die 4 show up fee nee das finde ich doof :P 18 vs 16 mit risiko dann lieber 17 sicher sagt was "
 __label__honest "ja 30%...  ja das stimmt auch wieder aber wegen einem euro?  ja finde ich auch unsinn ok"
-__label__dishonest kein_chat
+__label__dishonest "und hats geklappt 0 der erwartungswert bei 0 ist 184 und bei 1000 liegt er bei 170 das was höchstwarscheinlich ausgezahlt wird gebt unten ein was bei 0 und was bei 1000 raus kommt  dann rechnet 30% von dem mit strafe + 70% von dem ohne strafe ja 0"
 __label__honest "habe ich auch gedacht neuer Versuch? 100? ginge auch sowas wie 800... smiley ist ebenfalls nicht verkehrt also? dann nehmen wir jetzt 1000"
 __label__dishonest "War ja klar smiley Ja dat stimmt ;P"
 __label__dishonest "Es kann nur besser werden smiley"
 __label__dishonest "Nochmal 0 smiley Gut, das mindestens einmal kontrolliert wird war ja klar. Solange diese Periode nachher nicht ausgewählt wird ist es ja egal smiley"
-__label__dishonest kein_chat
-__label__dishonest kein_chat
+__label__dishonest "was habt ihr denn angegeben ? 1000 smiley was ist ein erwartungswert ? ja okay...also was wollen wir denn jetzt angeben? immer 0 oder ? ok"
+__label__dishonest "okay erste runde gut verlaufen, nächste runde wieder so? 0 das frage ich mich grad auch gut"
 __label__dishonest "wir haben aber auch ein glück smiley noch mal 0? wir sind total konsequent und wissen was wir wollen! also 0"
 __label__dishonest "das war klar  naja und nun?  smiley also jetzt doch 0 oder wie? ok"
 __label__dishonest "hat bis jetzt alles gut geklappt ja 70% chance halt im 2. Teilexperiment ändert sich die chance bestimmt dann haben wir immer noch 2 versuche vorher gehabt mit 220 Punkten und es wird nur EINE periode ausgewählt die wir ausgezahlt bekommen glaubt mir die chancen stehen so höher das darf ich nicht sagen smiley ich will nicht ausgeschlossen werden smiley"
@@ -45,7 +45,7 @@ __label__dishonest "aber nehmen wir an, wir werden jetzt kontrolliert und dieses
 __label__dishonest "lief ja auch wieder gut stimmt schon es ist einfach auch logisch"
 __label__dishonest "hey wir kommen nicht schneller hier raus, wenn wir uns schneller entscheiden oder? tja iwie ist es mir egal das ist mega der krass gute vorschlag! kommt drauf an wie diese runde ausgeht smiley oooder wir sind ganz verrückt in der nächsten runde und jeder macht was er will! ohne absprche alo 0 jetzt? also*"
 __label__dishonest "hello again wahrscheinlich nicht  ausser alle entscheiden sich schneller ja mir ist auch egal.. 0 oder 1000... kreativität ist nicht so mein ding  und nochmal 200 um Konsistenz zu zeigen smiley  da mag jemand überraschungen  ok "
-__label__dishonest kein_chat
+__label__dishonest "hey  bei mir hat sich ja nichts geändert gut dann wieder 0  smiley aber wir haben immernoch 2 * 220 Punkte und nur einmal 120 also sind wir im plus sozusagen doch bei mir steht 30% kontrolle also wie grade aso ja welche periode ausgewählt wird aber denke alle zur selben chance genau"
 __label__dishonest "willkommen zurück welche Strategie diesmal? wir wäre es wir sind kreativ und nehmen nochmal 0?  diese Runde 0 nächste wieder 1000? klingt doch gut! und SEHR kreativ! können wir gleich nochmal drüber reden smiley 0 ok"
 __label__dishonest "Also wir haben gerade nochmal ernsthaft die identischen Instruktionen bekommen ? Ja genau zum Beispiel Und am Ende wird eins der drei kontrollierten ausgewählt :P Ja bis jetzt smiley"
 __label__dishonest "same procedure as last time smiley ich hatte wenigstens erwartet, dass sich die Prozentzahlen ändern... naja wenn jetzt wieder 2 von 3 ohne Kontrolle rausspringen wäre das schon gut smiley"
@@ -63,7 +63,7 @@ __label__dishonest "na toll smiley ich frage mich gerade, was das erste teilexpe
 __label__dishonest "und die nächsten beiden werden wir wieder nicht mehr kontrolliert voll die blattverschwendung ist ja meistens so ja smiley, meistens halt eben, oder wie heute mit den unnötigen instruktionen"
 __label__dishonest "geht doch nochmal? ich habe hunger. gut möglich obs auch eine gruppe ohne chat gibt? smiley wehe wir müssen gleich noch mal 10min iwas lesen bis wann hat die mensa auf? okay, danke"
 __label__dishonest "bloß nichts beschreien  aber ich bin auch dafür hunger habe ich auch...  die würden sich dann aber sehr über das getippe hier wundern  smiley ja weil früher abgeben bringt ja auch nichts  smileyha  gibt es noch fragen?  smiley keine Ahnung.. oder 13:30  wegen ferien?"
-__label__dishonest kein_chat
+__label__dishonest "so läuft wieder bei uns smiley kann sich nur noch um stunden handeln bis du was zu futtern bekommst smiley ich frage mich was die anderen teilnehmen jetzt alles schreiben bestimmt aber ich wete es gibt auch eine gruppe die jedesmal was anderes wählt HEY NICHT EINPENNEN  ich frage mich immer ob die leiter unseren chat lesen können zur zeit HALLO LEITER smiley"
 __label__dishonest "ja, jetzt haben wir bestimmt einen Lauf upps. sorry. bestimmt sind wir in Runde drei auch nochmal ein Grüppchen glaube, dass alle einen Chat führen aber eigentlich reden alle nur übers Wetter und Hunger smiley bestimmt nochmal das was wir schon zweimal hatten das getippe hat aber auch einen meditativen Charakter smiley 14.30 oder so? kein Plan"
 __label__dishonest "Haha ja Freue mich jetzt schon auf nochmal identische Experimentinstruktionen *.* Hoffentlich weniger smiley smiley Oder sie steigt aber gleichzeitig auch das Unternehmenseinkommen Weiterhin dann wahrscheinlich \q0\q smiley"
 __label__dishonest "Wie zu erwarten war smiley ich wette gleich verändert sich die Kontrollwahrscheinlichkeit :/ Dann zeigt sich wer Zocker ist smiley"
@@ -76,7 +76,7 @@ __label__dishonest "gott sei dank waren die instruktionen kleiner ja der zufall 
 __label__honest "wer hätte das gedacht... smiley  könnte man also erstmal 1000?! man muss sich treu bleiben wo waren wir sonst stehen geblieben? Mensaöffnungszeiten!  ich habe ehrlich gesagt keine Ahnung. smiley auf jeden Fall meditativ aber uns fehlen die Leute, die uns Erfrischungsgetränke bringen das wäre ein Traum"
 __label__dishonest "Bis jetzt 50% Quote Brauchen perfekte Runde jetzt für 2/3 Mehrheit Anstatt es einfach bei den ertsen Instruktionen zu belassen smiley Wahrscheinlich eine Niete wieder dabei Ich glaube bei zwei Mal null ist der Median sowieso null"
 __label__dishonest "Total nachhaltig smiley Ja, weiter wie bisher. Aber eine perfekte Runde ist leider nicht sehr wahrscheinlich :((( Ich werde 0 eingeben :P"
-__label__dishonest kein_chat
+__label__dishonest "Immerhin wurde diesmal Papier gespart Weiter so? Kann ja nur besser werden Von mir aus können wir auch 1000 nehmen, dann hätten wir je zu 1/3 12, 17 oder 22 Können aber auch bei 0 bleiben  korrekt"
 __label__dishonest "badadum aber wieder kontrolliert :o :o :o ach was smiley zum glück sagst du das smiley mein magen knurrt echt laut smiley  oh meiin gott PANIK baer die lesen das hundertpro direkt. sonst könnten sie uns ja nicht direkt ausschliessen du meinst 120 ?  smiley ich meine ein stundelohn von 2 euro. wer kann da nein sagen ? wenn wir glück haben was mehr  yea"
 __label__dishonest "gut dass man nicht alle instruktionen auf einer vereinbaren hätte können aber kein grund zur panik hab nix gehört oh je jetzt steigt der spannungsgrad ja doch noch in unserer gruppe :o ist ja freiwillig hier eben und das werden wir, den mindestlohn sollten wir schon erreichen"
 __label__dishonest "jetzt hab ichs es ist wie ein spa mit eingebautem casino! :p alles oder nichts! ok der regen lässt nach..."
@@ -98,7 +98,7 @@ __label__dishonest "Ja jetzt wenigstens über 50% kommen Ich auch. Fänd ich gan
 __label__dishonest "der letzte chat uuuuh ich werde euch nie vergessen wollt ihr in mein poesiealbum schreiben ? hm..ok aber ohne foto ! dafür bekommst du einen sticker jap total. vor allem nummer 3 ist ne rich bitch smiley okidoki. war schön mit euch. einen schönen tag und adios. gebt das ganze geld nicht auf einmal aus !"
 __label__dishonest "so letzte runde smiley) jetzt wirds sentimental smiley finde ich aber auch smiley aber nur wenn du auch in meins schreibst  wir können uns ja eins kaufen, wenn wir hier gleich als rich bitches rausgehen so siehts aus smiley, ja euch auch einen schönen Tag smiley"
 __label__dishonest "Ich wäre dafür, dass wir den Median auf 400 bringen OK! Ist jz auch nicht so verkehrt gut  0#"
-__label__dishonest kein_chat
+__label__dishonest "500 jut. dann alle 400 SInd halt 2 € safe weniger so haste 20€ was ich schon mega fänd und auch 14€ wenn es klappt  weil 14€+4€stratgebühr+1,60€ biste bei 20€ fast also was jetzt ?"
 __label__dishonest "Hey habe mir überlegt das wir 500 ansetzen das ganze 2 mal  was meint ihr? selbst mit kontrolle kommt noch gut was rum  setzen wir niedriger an wird die auszahlung geringer selbst wenn wir nicht konrolliert werden das ja, aber sogar wenn wir nicht kontrolliert werden bei 700 bleiben uns 155 einheiten trotz kontrolle und 675 ohne kontrolle"
 __label__dishonest "Tach auch dann hätten wir 70% chance, mit 900 rauszugehen und 30% chance, mit 600 rauszugehen. die unterschiede sind so gering, dass wir bei 70% \qerfolgs\q-chance doch ruhig einfach nichts angeben können, oder? genau"
 __label__dishonest "Für was seid ihr?  ja wenn wir alle das gleiche machen ist das ja der median habt ihr mal bisschen was eingegeben?  finde 0 gar nicht so schlecht  man bekommt trotzdem noch 120  wenns schief läuft und sind nur 30% kontrolle ja macht halt nicht soo nen krassen unterschied  aber ja ist auch okay "
@@ -107,7 +107,7 @@ __label__dishonest "risiko und nichts angeben oder kompletten erfolg angeben? w�
 __label__dishonest "Risiko Sehr gut. Also alle 0? jut. Dann wünsch ich uns viel Glück!"
 __label__dishonest "hey wenn wir 500 setzen, ist die Auszahlung 195.. sind wir ehrlich ist die auszahlung 170. weiß nicht ob sich das lohnt dann wird die auszhlung geringer wenn wir kontrolliert werden also würde ich vllt vorschlagen entweder ehrlich zu sein oder auf das Glück hoffen dass man nicht kontrolliert wird und noch weniger setzen als 500"
 __label__dishonest "Genau. Ich würde bei 0 bleiben"
-__label__dishonest kein_chat
+__label__dishonest "Dann lass einfach nochmal 0. wird ja eh nur eine von 9 genommen 0"
 __label__dishonest "so müssen die zeit mehr beachten ne nur sollten wir uns jetzt einiges was wir nehmen ja ja sollte passen  ja dann lass es uns riskieren und 0 reinhauen ja"
 __label__dishonest "weil es noch so viel zu besprechen gibt? smiley die chance kontrolliert zu werden steigt nicht dadurch, dass wir bisher nicht kontrolliert wurden aber von mir aus... also mal so mal so halte ich für unsinn... könnten immer 0 oder immer 500 angeben... aber mir ists recht fein"
 __label__dishonest "Ja nur die wahrscheinlichkeit dass dann genau das genommen wir wo wir verkackt haben ist halt bei 30%  sollten nur bei einer sache jetzt bleiben denke ich  400 oder 0  ?  Gut"
@@ -122,7 +122,7 @@ __label__dishonest "smiley naja sind halt 12 euro statt 20 möglichen. am ende h
 __label__dishonest "mache mir ne strichliste, vielleicht ist die wahrscheinlich keit am ende ja sogar nur 20% für die kontrolle bie den 9 runden  gehts schneller wenn wir alle den chat verlassen?  dauert immer so lange  ja "
 __label__dishonest "Haha smiley Ja aber ich glaube nach dieser Runde gibt es neue Gruppen oder?"
 __label__dishonest "was sind das für menschen die hier jetzt jede runde diskutieren und sagt denen allen,die sollen den chat verlassen,vielleicht geht der bums dann schneller hier"
-__label__dishonest kein_chat
+__label__dishonest "Schade. Kann ja nicht immer klappen.   Bleiben natürlich trotzdem Ja. : Dann müssen wir uns auch mit Menschen auseinander setzen die nicht verstehen, dass es schlauer ist immer null zu machen So bin wieder raus"
 __label__dishonest "dann würde ich jetzt wieder 0 setzen smiley  bei viel pech verlieren wir wieder.. aber die wahrscheinlichkeit ist ja geringer  soll vorkommen smiley"
 __label__dishonest "Ja, voll die Zeitverschwendung  0 smiley"
 __label__dishonest "richtig unnötig jo 0 Läuft"
@@ -135,8 +135,8 @@ __label__dishonest "Ernshaft? Sicher ist sicher Ich find auch gut, dass da sogar
 __label__dishonest "und jetzt ? irgendwie komisch dass sich nichts ändert smiley wir gehen erstmal vom besten fall aus.. also 0 setzen? okay danach ists aber nicht mehr sauber ich setze 0"
 __label__dishonest "Haha Wir werden schon nicht hoch genommen  Der ist ja noch relativ gut damit weggekommen Haha diese kriminelle Energie smiley"
 __label__dishonest "ja Richtige Steuerhinterzieher sind wir Jetzt wisst ihr warum der Uli das gemacht hat, wenn das so einfach geht :p Wir kommen ja auch gut weg, wenn wir hinterziehen smiley Jaa smiley"
-__label__dishonest kein_chat
-__label__dishonest kein_chat
+__label__dishonest "na also schau einfach, dass du nicht einer der verlierer bist smiley 17 0der 12 euro bei kontrolle naja 5 euro nen döner haben oder nicht haben smiley ja  also was tun 0 also 0 smiley"
+__label__dishonest "Der Gewinn der Gewinner ist immer der Verlust der Verlierer. Und in einem Scheiß-System wie diesem darf das System selbst gern mal der Verlierer sein. Sorry, mir ist etwas langweilig. Die Verlierer haben dann wenigstens ordentlich was zu jammern. Das hat auch was für sich. Das ist wie Ende der 90er hier in dem Chat. 0 nicht schwächeln jetzt"
 __label__dishonest "Richtig gut smiley Hasmiley  Wir in jedem Fall auch smiley "
 __label__dishonest "Eher 70  zu 30..."
 __label__dishonest "\q30 zu 70\q ja auf den freu ich mich auch schon so man sieht sich"
@@ -153,7 +153,7 @@ __label__dishonest "Yeah! Haha ich frage mich aber wirklich worüber die in den 
 __label__honest "sher guter instinkt  wir würden nur einen döner verlieren statt 2 döner smileyh 3 ist risiko freudig okay.. also wieder 0?  guut 1000 dann sind wir mit einer fast perfekten runde  fertig mal schauen was der 3 teil noch gibt ich setze 1000 wird jedenfalls spannend"
 __label__dishonest "Hello again Könnte auch gleich einschlafen, wenn um mich herum nicht alle so auf die Tasten hauen würden smiley Ich frag mich was für Romane die verfassen Haha bestimmt wir sind hier nicht auf jodel Haha sowieso, bester Zeitvertreib"
 __label__dishonest "Grüß dich  Das Experiment hätte man auch 30 Minuten beschleunigen können DIe rasten alle immer voll aus Die schreiben sich Liebesbriefe Jodel beste smiley"
-__label__dishonest kein_chat
+__label__dishonest "hab das gefühl ich bin auf der förderschule letze runde war perfekt  selbe prinzip wie in der 2. runde mit 0 beginnen? eeinmal sind wir einfach dran  was denkt ihr? euer gefühl? 1. döner weniger oder 2. weniger oder alle smiley find ich gut ich schufte keine 60 st. die woche um dann noch was abzugeben wir sind vorherige runde auch nicht auf nummer sicher in phase 2 smiley smiley ne fun runde? ich werd null ansetzen hat jemand nen würfel 42795 ist null der rest alles smiley ha was eine überraschung ich auch"
 __label__dishonest "schön gesehen der staat kreigt nix jede/r macht einfach was er/sie will, ok? ist am demokratischsten ok dann geb ich 2 ein \qauf nummer sicher\q"
 __label__dishonest "Ich schlaf gleich ein  Hahah ja smiley Richtig aktiv Hoch mathematische Formeln stellen die auf "
 __label__dishonest "So langsam glaube, dass das hier eine psychologische Untersuchung ist smiley Ja und so ganz hab ich das immernoch nicht verstanden viel zu schwammig ausformuliert auch ich glaub auch"
@@ -165,7 +165,7 @@ __label__dishonest "Ich hab hunger Erst die Arbeit, dann das Vergnügen Ich merk
 __label__honest "sehr gut 2 safety runden? ich mein am ende kommt eh nochmal 1 aus 9 is wie hochdrücken in der spielo dann hätten wir die mehrheit 22 und 1^7 euro wennj wir 600 angeben nehmen wir trotz kontrolle 15 mit oder halt 19 bei keiner kontrolle schade das man nicht den beamten bestechen kann und sich die warsch der kontrolle auf 10 prozent verringert 600 nehmen? ok"
 __label__honest "erfolg beim glücksspiel. so wird man süchtig. und mit unseren steuern retten die dann die banken, na toll so sei es"
 __label__dishonest "Läuft! Ich muss auf Toilette  smileyha  Diese Langeweile"
-__label__dishonest kein_chat
+__label__dishonest keinchat
 __label__dishonest "ja die runden brauchen wir aber auch hab schon lust ne 220 runde gezogen zu bekommen  glaub schon ich bleib jetzt mal bis zum ende im chat und gucke wann die letzten tastaturen verstummen"
 __label__dishonest "jetzt läufts aber 3 zu 4 stehts oder? also 3 mal kontrolliert  6 bzw 7 zu drei wäre normalverteilung ich glauzb ich mach nochmal ein paar Proberechnungen"
 __label__honest "und nu? wieder 0? stimmt bis jetzt haben wir auch einmal erst richtig verloren wieder riskieren und 0 setzen? hört sich gut an wäre bei 600 dabei "
@@ -174,15 +174,15 @@ __label__dishonest "Letzte Runde und so. Deswegen danke ich euch schonmal für d
 __label__honest "ok schade hätte bei ner kontrolle jetzt 0 reingebuttert ja eig schon  aber ich seh halt schon meine eigene dönerbude vor mir ..... is immerhin etwas sichere mitnahme von 17 euro und gut is muss halt ein teil des ladens finanziert werden zinsen sind ja unten 1000 oder? ich mein bei 600 kommen nochmal evtl 2 euro drauf oder runter und will schon plus 20 euro haben smiley am ende der 2 stunden ich nehm 1000 euch auch"
 __label__honest "also ich sags nur mal: ich hab 0 eingegeben smiley macht ihr mal smiley naja bringt ja nix wenn der median genommen wird.... ist ne nullstimme aber hey. ich bleib mir treu, immerhin und die ganzen AfD-Wähler.... die klau'n uns die Arbeitsplätze! na gut kriegste eh gut appetit, lebt wohl"
 __label__dishonest "haben uns auf mind 88% gesteigert  Ich danke auch, vorallem dass meine böse Idee so schnell Anklang gefunden hat!  smileysmiley  da musste ich ja fast laut lachen und hätte mich enttarnt  wer weiß "
-__label__dishonest kein_chat
+__label__dishonest keinchat
 __label__dishonest "yes keine ahnung,bin irgendwann raus gegangen als es verstummte,aber da ging es wieder los smiley die läuft auf jeden fall verdammt weit runter auf jeden fall nichts überstürzen jetzt nochmal ne 220 und wir können fast die korken knallen lassen"
 __label__dishonest "und wann war vorbei mit dem Schrieben Zeit abgelaufen? man sollte sich solchen schwerwiegenden ENtscheidungen aber auch nicht zu leicht machen Na dann auf eine Gute letzte Runde und besonders eine gute Auslosung am Schlus!"
 __label__honest "smiley ich würde jetzt wieder eher auf nummer sicher gehen  jetzt noch potentiele 10 euro verlieren wäre unnötig du machst eh dein ding auch gut bin also für eine sichere variante.. 600 oder 1000? wäre dabei  danke für die schöne absprache hier smiley  lasst euch euer nächsten essen schmecken nehme auch 1000"
 __label__honest "ich wäre dafür nicht zu viel zu pokern hey auch  nur einmal 800 du? 750 wäre ich dabei aber unter 600 wäre das risiko zu groß für mich wenig zuverdienen hm was sagt ihr dann zu der mitte 600? würdest du von den 1000 gar nichts runter gehen mitglied 2?"
-__label__honest kein_chat
+__label__honest "Stimme zu 1000 Ich gehe auch nicht wieter runter Ich bleibe bei 1000"
 __label__honest "Hi - welche Beträge habt ihr bisher erklärt? Ich hab die Wahrscheinlichkeiten berechnet, am meisten kriegt man im Durchnitt raus wenn man 250-750 angibt. hab bisher 250, 250, 400 Das Minimum was man mit 500 ausgezahlt bekommt, ist 145 Okay, aber im Schnitt bekommt man bei 100 150 Lab-points ausgezahlt, bei 750 kriegt man 155, bei 500 kriegt man 160 und bei 250 kriegt man im schnitt 165 wuerd dann 600 auch sagen, darauf kann ich mich einigen 1000 hat den schlechtesten Durchschnitt von allen, und wenn man 500 angibt \qverliert\q man yu 30% 12,5 euro, aber zu 70% gewinnt man 2,50"
 __label__dishonest Ok
-__label__dishonest kein_chat
+__label__dishonest "Ich schlage vor wir nehmen 0 und bekommen zu 70% 2,20€ wenn ihr die sichere schiene fahren wollt und wir 1000 eingeben bekommen wir 1,70 € . ist auch okay was sagst du mitglied nr 3? ok also  0"
 __label__dishonest "Wie sieht es aus?  versuchen wir es in der ersten Runde auf Risiko"
 __label__honest "smiley ja aber jetzt wäre ich vorsitchiger da die wahrscheinlichkeit größer wird dasss jetzt kontrolliert wird ich glaube dass eh mein wert den median bilden wird wenn einer von euch bei  1000 bleibt und mitglied 3 so weit runter"
 __label__honest ja
@@ -196,9 +196,9 @@ __label__honest "bei mir in der ersten runde einmal kontrolliert in dieser runde
 __label__honest "Ok, ich bin auch einverstanden"
 __label__honest "sollen wir vllt 500 nehmen? dann würden wir höchstens 25 cent verlieren.. also 500!"
 __label__honest "Gut, da haben wir uns dann doch getäuscht. Aber wenn jetzt schon zwei mal nicht kontrolliert wurde, ist die Wahrscheinlichkeit jetzt für eine Kontrolle schon etwas höher  Den Vorschläg hätte ich dann jetzt auch gemacht. Also ich stimmte zu! "
-__label__dishonest kein_chat
+__label__dishonest "hey mates wir hinterziehen die steuer oder? 0 3x ok? kk was würdest du denn sagen? ist dir das nicht recht? das risiko ist \qgering\q ja das sind 5€ das kann man verkraften smiley okay drücken wir uns die daumen!"
 __label__dishonest "ja würde ich auch sagen, 3x denselben Betrag? wegen mir ja wenn Du das nicht willst, sag es ruhig, dafür ist der Chat ja da smiley  ok"
-__label__dishonest kein_chat
+__label__dishonest "kann ich mich dann ja nur \qanschließen\q ihr seid der median  i know ... mir sind eigentlich 170 sicher lieber als nur 120, aber die entscheidung ist doch getroffen.   Jutjut ,dann los"
 __label__dishonest "hallo 250,0,0 wenn wir tausend angeben, sind uns 17 euro sicher. wenn wir 0 angeben chance auf 22 oder 12,5. also gehts hier um 5 euro plus oder minus von mir aus volles risiko auf 0 smiley"
 __label__dishonest "hallo Ich wurde gerade bei zwei von drei mal erwischt. Villeicht sollten wir etwas mehr als 0 angeben. Habe bisher immer 700 angegeben, bin aber auch mit weniger einverstanden Wollte gerade 100 vorschlagen, aber dann bekommt man falls man erwischt wird ja auch eh nur 50ct mehr als wenn man 0 angibt. Also meinetwegen können wir auch 0 angeben smiley oki smiley 2 Mal Mensa smiley"
 __label__dishonest "hi Bin für 0 Punnkte *Punkte Wieviel Einkommen habt ihr bis jetzt erklärt? Habe 3 x  0 angegeben. Wurde 1 x erwischt Was meint ihr? Das dachte ich mir auch =) Sind eben 5 € hin oder her"
@@ -213,12 +213,12 @@ __label__dishonest "wir Gauner smiley alle guten Dinge sind drei smiley ich dach
 __label__dishonest "ich bin gespannt! ^^ na dann solltest du es dir besonders schmecken lassen! smiley dito!"
 __label__honest "schonmal chancen auf 12€ und 18€ smiley alles klar, den selben song noch mal smiley müssen wir nicht alle den chat verlassen? oder richtet sich das programm nach ALLEN teilnehmenern? hmpf...^^ war schön mit euch! bb"
 __label__honest "ich bin wieder für 800. 18 oder 16€ gefällt mir dich deutlich besser als 12 smiley Ist ein guter Stundenlohn smiley hervorragend smiley damdamdamdam damdamdam... smiley Manche tippen noch fleißig smiley"
-__label__honest kein_chat
+__label__honest "Denke 800 ist ne gute Mitte. Gewinnen ganz gut aber wenn wir kontrolliert werden kriegen wir auch nur 2€ weniger sind dann insg. 24€ plus das Ergebnis der Lotterie Stimme 1 zu Top  immer diese Wartezeit... Allen, as always :/ Aber 2 Std. brauchen wir trotzdem nicht für alles dito"
 __label__honest "ich würd einfach mal ne ehrlich Angabe machen - da springt immer noch genug bei raus 170 Punkte, also 17 Euro, wenn ich das richti verstanden habe bei 500 sind es ohne kontrolle 195, mit kontrolle 145 was meint ihr das macht irgendwie alles nicht so nen riesenunterschied. aber für jede niefdrigere auszahlung solten wir auch wieder einehöhere reinholen ( entschuldigt meine tippfehler) ich meine, wenn wir etwas falsches angeben und \qerwischt\q werden und dan durch die Strafe etwas niedrigeres erhalten als 170, sollten wir danach wieder mehr erhlten als 170,damit sich das gelohnt hat"
 __label__honest "Wie viel wäre es denn? Auf was einigen wir uns?"
 __label__dishonest "Wahrscheinlichkeit kontrolliert zu werden liegt bei 70 %. Bin auch dafuer ein geringes Unternehmenseinkommen zu nehmen würde allerdings 200 nehmen"
 __label__dishonest "Vorschlag: 150 Enter drücken nicht Chat verlassen smiley OK was sagt GM1?"
-__label__honest kein_chat
+__label__honest "170 jap bei 750 sind es 18,25 ohne und 15,75 mit aber so groß ist der unterschied da jetzt nicht wie meinst du das?"
 __label__dishonest "bin auch für 200"
 __label__dishonest "von mir aus können wir wieder 1000 angeben ich finde 900 lohnt sich nicht. entweder 1000 oder was richtig falsches hm... ok, wir können es ja mal ausprobieren. wenn es klappt, sollten wir es aber vll dabei belassen wenn es nicht klappt, vll nochmal probieren ; ) akzeptiert nummer 2, du halunke ok"
 __label__dishonest "Sollen wir mal 0 riskieren? 0? Wäre eine periodenauszahlung von 220 Und die Wahrscheinlichkeit liegt bei 70 Prozent ohne kontrolle also 0? Chat verlassen?"
@@ -229,7 +229,7 @@ __label__honest "Ich gehe davon aus das einer der 3 auf jedenfall kontrolliert w
 __label__dishonest "cool! ich würde jetzt aber erstma wieder 1000 angeben was ja, aber du darfst die 30% nicht vergessen lass erst einmal 100 und dan noch überlegen, wir habe noch 7 runden und es ist besser mit nicht ganzs viel rauszugehen als mit wirklich wenig 1000, nicth 100 hab mich vertippz das stimmt..... ooookeee oh, mann na gut ob wir den chat frühzeitig verlassen oder nicht, verändert anscheinend nicht die zeitspanne, wie wir dann noch warten, bis wir die zahl eintippen, ne hacj, wie illiegal, nummer 2! smiley"
 __label__dishonest "Ich würde es nochmal mit 0 riskieren Die Wahrscheinlichkeit liegt wie gesagt bei 70 Prozent Bisschen risikofreudiger 220 sind 22 euro das andere sind 5 euro weniger Ich würde bei den null bleiben Können es nochmal mit 0 versuchen Und dann sonst viellecht auf 400 zb gehen Also kann man auch im chat bleiben Diese runde noch mal risiko No risk no fun"
 __label__dishonest "Okay, was schlägst du vor? Denke das auch so! Ich meine auch sowas mal gehoert zu haben! Vorschläge?! 400?"
-__label__dishonest kein_chat
+__label__dishonest "In den Instruktionen steht, dass die Wahrscheinlichkeit immer die gleiche ist 30% zu 70% - sprich die Wahrscheinlichleit ist bei jedem Abstimmen gleich.  GM1: Welche Formel wendest Du an?  Wir haben aber weit aus bessere Chance als beim Würfeln , wie erwähnt 150"
 __label__dishonest "ja gut ich würde auch 1000 angeben mhm aber sonst sids halt 12 euro wenns nicht klappt so ein riesen unterschied ist das jetzt nicht ja bei nicht kontrolle 22 und bei kontroll 12 also 0 wieder? ok also 0? alrighty wuhuu"
 __label__dishonest "Es ist doch so, dass trotz gleichbleibender Wahrscheinlichkeit, die Wahrscheinlichkeit, dass immer der gleiche Fall eintritt sinkt. Genau wie bei einem Würfel ist die Wahrscheinlichkeit immer 1/6, aber die Wahrscheinlichkeit 	sinkt für die Zahl, die im Wurf zuvor gefallen ist?! Auf die bin ich leider gerade nicht gekommen, aber ich erinner mich an so etwas smiley Vorschläge bevor die Zeit um ist? 250?"
 __label__dishonest "was sollte das denn... ich bin auch erstmal für 400, denk ich nummer 2, du bist knallhart und wir folgen wie die lämmer ja, ok, entweder 1000 oder 0 also erst nochmal 0?+ bis wir damit auf die schnauze fliegen nein smiley wie auch, wissenja nicht, wer du bist ; ) OK, 0 oder zumindest bis wir einmal verleieren, dann können wir wieder überlegen alles klar, wir kriminellen hihihi jaja"
@@ -257,7 +257,7 @@ __label__dishonest "Ooops they did it again Si Die zweite Instruktion war schwer
 __label__honest "ich würde erstmal 1000 sagen und danach nochmal 0 oh gott sorry jetzt hab ich euch ggebüber ein schlechtes gewissen  ja ist ok was ist albern? smiley achso ja ich auch nochmal socializen iund so voll nervig jap "
 __label__dishonest "Jeder die dritte Instruktion verstanden? smiley also weiter so?! Ich bekomme das Bild von Roulette nicht mehr aus dem Kopf, wenn ich auf das Ergebnis warte, ob wir kontrolliert wurden smiley Casino Feeling Stiften die uns gerade eigentlich zu Steuerhinterzug an? smiley Haha, stimmt smiley"
 __label__dishonest "yeah, endlich wieder ok, und jetzt? nr 2? smiley okilidokili war wiiitz war nurn scherz wegen vorhin und du scheinst das entscheidungsfreudigste gruppenmitglied zu sein nr 3 und ich sind unentschlossen gut, ich hatte gehofft, ihr würdet meinen listigen scherz noch lesen lustigen das freut mich von mir aus 0 oder was meint 3? ich bin bei allem mit, ihr kennt mich ja mittlerweile auch zu allen guten taten, wenn man mich fragt smiley das kommt drauf an, mit wem ich den tag so verbringe heute abend werdeich betrunken sein, also ja und ihr? ja, also heute habe ich mich zu vielen bösen taten mitreißen lassen auch gut, dann kanste denen ja auch noch etwas kohle abzwacken ja, die kohle wird verprasst also 0, NEß ja"
-__label__dishonest kein_chat
+__label__dishonest "Das ging gut Dabei bleiben oder wieder risiko? 0 Warum muss ich das denn immer entscheiden? Wir sind eine demokratie Dann sag ich null smiley Also tagebuch hab ich zuletzt in der grundschule geschrieben smiley Haben wir Werd ich jetzt etwa überstimmt? Wir können auch 400 wieder nehmen ok Du bist also zu allen schandtaten bereit Kannst du dann nachts noch ruhig schlafen? Haha wie ist denn das gemacht? gemeint Ich statte meinen eltern einen besuch ab Also heut abend partyyyy mit der dicken kohle ja"
 __label__dishonest "Hoffentlich wählt der zufallsgenerator diese Runden aus... Haha"
 __label__dishonest "Gewinne Gewinne Gewinne jedes Los gewinnt Wir könnten die Wahrscheinlichkeit ja mal ausrechnen. Geht leider erst am Ende.  Nur  das dies eine Straftat ist und die Behörden Zugriff auf Kontodaten haben. Aber Daten geb ich ja gerne her FB,WA,Google Ganz zu schweigen von der Wahrscheinlichkeit, dass err d die Menskarte verliert. Mechanische Tastatur wäre auch gut. Meine hängt."
 __label__dishonest "20 euroooooos whoopp whooop du hast irgendwie scheinbar die meiste peilung ich musste grad voll laut lachen wegen dem tagebucheintrag smiley jaa 0 smiley smiley richtig spendabel sein love it."

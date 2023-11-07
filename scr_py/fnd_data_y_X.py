@@ -57,7 +57,7 @@ df_spllchckd = prepare_X_y(df_spllchckd, dv="declared_income_final")  # I need t
 # define loop vars
 df_vars = {
     "original": df,
-    "spell_checked": df_spllchckd
+#    "spell_checked": df_spllchckd
 }
 
 y_vars = {

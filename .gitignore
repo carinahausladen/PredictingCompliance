@@ -38,3 +38,5 @@ data/glove.word2vec
 *_files
 
 fastText
+
+data/best_model.sav

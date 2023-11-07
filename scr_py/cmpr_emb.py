@@ -22,7 +22,6 @@ from UtilWordEmbedding import TfidfEmbeddingVectorizer
 from setup import prepare_docs
 from strt_grp_sffl_splt import str_grp_splt
 from utility import run_log_reg
-from pymagnitude import *
 
 
 df = pd.read_csv('data/df_chat_socio.csv')
@@ -107,24 +106,35 @@ train_X, train_y = ros.fit_resample(train_X, train_y)
 m_w2v_own_tfidf = run_log_reg(train_X, test_X, train_y, test_y)
 
 # pre, simple
-# python -m pymagnitude.converter -i 'analysis/data/vectors_w2v.txt' -o 'analysis/data/w2v.magnitude'
-w2v = Magnitude('data/w2v.magnitude')
+from gensim.models import KeyedVectors
+w2v = KeyedVectors.load_word2vec_format("data/w2v_size.txt", binary=False, unicode_errors='ignore')
+new_key_to_index = {key[2:-1]: val for key, val in w2v.key_to_index.items()}
+w2v.key_to_index = new_key_to_index
 
 
-def avg_embdngs(documents, embedings, num_trials=10):
+# Improved function
+def avg_embdngs(documents, embeddings, num_features):
     vectors = []
-    for title in tqdm(documents):
-        try:
-            emb = np.average(embedings.query(word_tokenize(title)), axis=0)
+    for doc in tqdm(documents):
+        words = word_tokenize(doc)
+        word_embeddings = []
+        for word in words:
+            if word in embeddings:
+                word_embeddings.append(embeddings[word])
+
+        if word_embeddings:
+            emb = np.mean(word_embeddings, axis=0)
             vectors.append(emb)
-        except:
-            print(f"Failed")
-            print(title)
+        else:
+            vectors.append(np.zeros(num_features))
+            print(f"Failed on document: {doc}")
+
     return np.array(vectors)
 
 
-df.new_docs = [x if len(x) != 0 else "keinchat" for x in df.new_docs]
-X_w2v_pre = avg_embdngs(df.new_docs, w2v)
+num_features = w2v.vector_size
+df.new_docs = [x if len(x) != 0 else "kein chat" for x in df.new_docs]
+X_w2v_pre = avg_embdngs(df.new_docs, w2v, num_features)
 
 train_idx, test_idx = str_grp_splt(df_prep,
                                    grp_col_name="Group_ID_simuliert",
@@ -144,12 +154,23 @@ tfidf.fit(df.new_docs)
 idf_dict = dict(zip(tfidf.get_feature_names_out(), tfidf.idf_))
 
 
-def tfidf_embdngs(documents, embedings):
+def tfidf_embdngs(documents, embeddings):
     vectors = []
-    for title in tqdm(documents):
-        w2v_vectors = embedings.query(word_tokenize(title))
-        weights = [idf_dict.get(word, 1) for word in word_tokenize(title)]
-        vectors.append(np.average(w2v_vectors, axis=0, weights=weights))
+    for doc in tqdm(documents):
+        words = word_tokenize(doc)
+        word_vectors_and_weights = [(embeddings[word], idf_dict.get(word, 1)) for word in words if word in embeddings]
+
+        if word_vectors_and_weights:  # Check if there is at least one word vector
+            word_vectors, weights = zip(*word_vectors_and_weights)  # Unzips into two lists
+            word_vectors = np.array(word_vectors)
+            weights = np.array(weights)
+            weighted_average = np.average(word_vectors, axis=0, weights=weights)
+            vectors.append(weighted_average)
+        else:
+            # Append zero vector if no words found in the embeddings
+            vectors.append(np.zeros(embeddings.vector_size))
+            print(f"Failed on document: {doc}")
+
     return np.array(vectors)
 
 
@@ -171,9 +192,12 @@ m_w2v_pre_tfidf = run_log_reg(train_X, test_X, train_y, test_y)
 # glove#
 ########
 # glove, pre
-# convert file before!
-glove = Magnitude('data/glove_vec.magnitude')
-X_glove_pre = avg_embdngs(df.new_docs, glove)
+glove = KeyedVectors.load_word2vec_format('data/glove.txt', binary=False, no_header=True)
+glove_list = glove.index_to_key
+glove_list_lower = [word.lower() for word in glove_list]
+num_features=glove.vector_size
+
+X_glove_pre = avg_embdngs(df.new_docs, glove, num_features)
 
 train_idx, test_idx = str_grp_splt(df_prep,
                                    grp_col_name="Group_ID_simuliert",
@@ -209,10 +233,10 @@ m_glove_pre_tfidf = run_log_reg(train_X, test_X, train_y, test_y)
 ####
 # ft#
 ####
+# ft uses Logistic Regression and sentence embeddings; metrics caluclated and safed in class_fast.py
 
-# ft, own
-'ft uses LR and sentence embeddings; txt from class_fast.py'
-m_ft_own = np.load("data/fasttext_embeddings.npy")
+m_ft_own = np.load("data/m_ft_own.npy") # these are my own trained
+#m_ft_own = np.load("data/fasttext_embeddings.npy") # these do not seem to be the own embeddings where are they from!! SO good performance
 
 ##########
 # do2vec #

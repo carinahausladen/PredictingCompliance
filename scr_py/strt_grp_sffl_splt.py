@@ -2,16 +2,6 @@ import numpy as np
 from sklearn.model_selection import GroupShuffleSplit
 
 
-# os.chdir("/Users/carinahausladen/FHM/analysis")
-# df = pd.read_csv('data/df_chat_socio.csv')  # 855 rows, 9 columns
-# df, df_docs = prepare_docs(df, y="honest500", X="Chat_subject", dv="declared_income_final")
-#  grp_col_name = "group.id_in_subsession"
-# grp_col_name = "Group_ID_simuliert"
-# y_col_name = "honest500"
-# train_share = 0.8
-# minority_label = 1
-# #
-# df = df_new
 
 def str_grp_splt(df,
                  grp_col_name,

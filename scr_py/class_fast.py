@@ -1,4 +1,6 @@
 import os
+import sys
+sys.path.append(os.path.abspath("scr_py"))
 import fasttext
 import pandas as pd
 from setup import prepare_docs
@@ -9,7 +11,7 @@ import numpy as np
 
 df = pd.read_csv('data/df_chat_socio.csv')
 df, df_doc = prepare_docs(df, y="honestmean", X="Chat_subject", dv="declared_income_final")
-df_doc.new_docs = [x if len(x) != 0 else "kein_chat" for x in df_doc.new_docs]
+df_doc.new_docs = [x if len(x) != 0 else "keinchat" for x in df_doc.new_docs]
 ros = RandomOverSampler(random_state=42, sampling_strategy='minority')  # oversampling!
 
 train_idx, test_idx = str_grp_splt(df,
@@ -42,7 +44,6 @@ os.system("cat /Users/carinah/Documents/GitHub/PredictingCompliance/data/chat_te
 os.system("cat /Users/carinah/Documents/GitHub/PredictingCompliance/data/chat.txt | sed -e \"s/\([.\!?,'/()]\)/ \1 /g\" | tr \"[:upper:]\" \"[:lower:]\" > /Users/carinah/Documents/GitHub/PredictingCompliance/fastText/chat.pre.txt")
 
 # model and training
-#model = fasttext.train_supervised(input='data/chat.pre.train.txt')
 model = fasttext.train_supervised(input='data/chat.pre.train.txt', autotuneValidationFile='data/chat.pre.test.txt')  # takes 5 minutes
 
 def run_pred():
@@ -85,20 +86,47 @@ metrics = np.mean(metrics_matrix, axis=0)
 m_ft_own = metrics
 np.save("data/m_ft_own.npy", m_ft_own)
 
+
+#################################
+# use pre-trained word vectors #
+################################
+import fasttext.util
+from sklearn.linear_model import LogisticRegression
+
+#fasttext.util.download_model('de', if_exists='ignore')  # german
+model_pre = fasttext.load_model('cc.de.300.bin')
+
+def sentence_to_vector(sentence, model):
+    words = sentence.split()
+    word_vectors = [model.get_word_vector(word) for word in words]
+    if len(word_vectors) == 0:
+        return np.zeros(model.get_dimension())
+    sentence_vector = np.mean(word_vectors, axis=0)
+    return sentence_vector
+
+X_train_vectors = np.array([sentence_to_vector(doc, model_pre) for doc in df_train['Chat_subject']])
+X_test_vectors = np.array([sentence_to_vector(doc, model_pre) for doc in df_test['Chat_subject']])
+
+y_train = df_train['honestmean'].apply(lambda x: 1 if x == '__label__honest' else 0).values
+y_test = df_test['honestmean'].apply(lambda x: 1 if x == '__label__honest' else 0).values
+
+
+classifier = LogisticRegression(random_state=42)
+classifier.fit(X_train_vectors, y_train)
+y_test_pred = classifier.predict(X_test_vectors)
+y_test_prob = classifier.predict_proba(X_test_vectors)[:, 1]
+
+metrics = print_model_metrics(y_test, y_test_prob, confusion=False, verbose=False, return_metrics=True)
+m_ft_pre = metrics
+#m_ft_own pretrained are worse than own
+np.save("data/m_ft_pre.npy", m_ft_pre)
+
+
 # check performance
 #result_train = model.test('data/chat.pre.train.txt')
 #result_test = model.test('data/chat.pre.test.txt')
-
 
 # check quality of vectors
 #model.words
 #model.get_nearest_neighbors(':D')
 #model.get_analogies("risiko", "hinterziehen", "steuer")  # this command takes a triplet
-
-
-# load pre-trained vectors
-#import fasttext.util
-#fasttext.util.download_model('de', if_exists='ignore')  # german
-#model_pre = fasttext.load_model('cc.de.300.bin')
-
-# Prepare one for the visualzation of embeddings

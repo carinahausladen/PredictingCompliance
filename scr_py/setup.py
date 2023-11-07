@@ -29,7 +29,7 @@ def prepare_docs_haus(df, y, X, dv):
                         ":\)", ";\)",
                         ":-\)", ";-\)", "haha"
                         ])
-    df.loc[:, X] = df.loc[:, X].str.replace(pattern, "smiley", regex=True)
+    df.loc[:, X] = df.loc[:, X].str.replace(pattern, " smiley ", regex=True)
 
     nlp = spacy.load("de_core_news_sm")  # .venv/bin/python -m spacy download de
     stop_words = spacy.lang.de.stop_words.STOP_WORDS
@@ -57,7 +57,7 @@ def prepare_docs(df, y, X, dv):
                         ":\)", ";\)",
                         ":-\)", ";-\)", "haha"
                         ])
-    df.loc[:, X] = df.loc[:, X].str.replace(pattern, "smiley", regex=True)
+    df.loc[:, X] = df.loc[:, X].str.replace(pattern, " smiley ", regex=True)
 
     nlp = spacy.load('de_core_news_sm')
     #nlp = spacy.load('de')  # .venv/bin/python -m spacy download de
