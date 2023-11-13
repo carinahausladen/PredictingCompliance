@@ -13,12 +13,27 @@ sys.path.append(os.path.abspath("scr_py"))
 from setup import prepare_docs, prepare_docs_haus
 
 # Fochmann
-df_fochmann = pd.read_json('../data/df_chat_socio.json')
-df_prep_foch, all_docs_haus = prepare_docs(df_fochmann, y="honest1000", X="Chat_subject", dv="declared_income_final")
+df_fochmann = pd.read_json('data/df_chat_socio.json')
+df_prep_foch, all_docs_foch = prepare_docs(df_fochmann, y="honest1000", X="Chat_subject", dv="declared_income_final")
 
 # Hausladen
-df_hausladen = pd.read_csv('../data/df_chat_hours.csv')
+df_hausladen = pd.read_csv('data/df_chat_hours.csv')
 df_prep_haus, all_docs_haus = prepare_docs_haus(df_hausladen, y="honest10", X="Chat_subject", dv="player.hours_stated")
+
+####################################
+#### number of unique tokens #######
+####################################
+flattened_tokens_foch = [token for doc in all_docs_foch.doc_words for token in doc]
+unique_tokens_foch = set(flattened_tokens_foch)
+number_of_unique_tokens = len(unique_tokens_foch)
+
+flattened_tokens_haus = [token for doc in all_docs_haus.doc_words for token in doc]
+unique_tokens_haus = set(flattened_tokens_haus)
+number_of_unique_tokens_haus = len(unique_tokens_haus)
+
+overlapping_tokens = unique_tokens_foch.intersection(unique_tokens_haus)
+number_of_overlapping_tokens = len(overlapping_tokens)
+
 
 #########
 # plot FOCHMANN#
@@ -94,13 +109,13 @@ plot_df = pd.DataFrame({col: df_prep_haus[col].value_counts() for col in ordered
 rename_dict = {1: "honest", 2: "undefined", 0: "dishonest"}
 plot_df = plot_df.rename(index=rename_dict)
 plot_df.T.plot(kind="bar", stacked=True, ax=axs[1], color=['#D41159', '#1A85FF', 'grey'])
-axs[1].set_xticklabels(['min', 'median', 'mean'], rotation=45, fontsize=8)
+axs[1].set_xticklabels(['max', 'median', 'mean'], rotation=45, fontsize=8)
 axs[1].set_xlabel('Threshold')
 axs[1].set_ylabel('Frequency')
 axs[1].get_legend().remove()
 fig.suptitle('Experiment II', fontsize=14)
 
 plt.tight_layout()
-plt.savefig('../figures/y_hausladen.pdf', bbox_inches='tight')
+plt.savefig('figures/y_hausladen.pdf', bbox_inches='tight')
 plt.show()
 

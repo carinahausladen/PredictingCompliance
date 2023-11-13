@@ -24,10 +24,18 @@ from strt_grp_sffl_splt import str_grp_splt
 from utility import run_log_reg
 
 
-df = pd.read_csv('data/df_chat_socio.csv')
+df = pd.read_csv('../data/df_chat_socio.csv')
 df_prep, df = prepare_docs(df, y="honestmean", X="Chat_subject", dv="declared_income_final")
+
+df.doc_words = [["kein", "chat"] if not doc else doc for doc in df.doc_words] #sometimes there is an empty [] when chat was only stop words
+df.new_docs = [["kein chat"] if not doc else doc for doc in df.doc_words]
+
+df.new_docs = [" ".join(doc) if isinstance(doc, list) else doc for doc in df.new_docs] # Ensure that all elements in df.new_docs are strings
+df.new_docs = [doc if isinstance(doc, str) and doc.strip() != "" else "kein chat" for doc in df.new_docs]
+
 ros = RandomOverSampler(random_state=42, sampling_strategy='minority')  # oversampling!
 df_prep["honestmean"].value_counts()  # 1: minority = compliance
+
 
 ##############
 # embeddings #
@@ -107,26 +115,31 @@ m_w2v_own_tfidf = run_log_reg(train_X, test_X, train_y, test_y)
 
 # pre, simple
 from gensim.models import KeyedVectors
-w2v = KeyedVectors.load_word2vec_format("data/w2v_size.txt", binary=False, unicode_errors='ignore')
+w2v = KeyedVectors.load_word2vec_format("../data/w2v_size.txt", binary=False) #, unicode_errors='ignore')
+# important about averaged embeddings https://stackoverflow.com/questions/65121932/how-to-use-deepsets-word-embedding-pre-trained-models-using-gensim
 new_key_to_index = {key[2:-1]: val for key, val in w2v.key_to_index.items()}
 w2v.key_to_index = new_key_to_index
 
 
-# Improved function
 def avg_embdngs(documents, embeddings, num_features):
+    oov_vector = np.zeros(num_features) # default vector for OOV words
+
     vectors = []
     for doc in tqdm(documents):
         words = word_tokenize(doc)
         word_embeddings = []
         for word in words:
-            if word in embeddings:
+            if word in embeddings.key_to_index:  # Check if the word is in the model's vocabulary
                 word_embeddings.append(embeddings[word])
+            else:
+                # Use the default OOV vector
+                word_embeddings.append(oov_vector)
+              #  print(f"OOV word: {word}")
 
         if word_embeddings:
-            emb = np.mean(word_embeddings, axis=0)
-            vectors.append(emb)
+            vectors.append(np.mean(word_embeddings, axis=0)) # calc mean of embeddings
         else:
-            vectors.append(np.zeros(num_features))
+            vectors.append(oov_vector)
             print(f"Failed on document: {doc}")
 
     return np.array(vectors)
@@ -152,7 +165,6 @@ m_w2v_pre_smpl = run_log_reg(train_X, test_X, train_y, test_y)
 tfidf = TfidfVectorizer(input='content', lowercase=False, preprocessor=lambda x: x)
 tfidf.fit(df.new_docs)
 idf_dict = dict(zip(tfidf.get_feature_names_out(), tfidf.idf_))
-
 
 def tfidf_embdngs(documents, embeddings):
     vectors = []
@@ -192,7 +204,7 @@ m_w2v_pre_tfidf = run_log_reg(train_X, test_X, train_y, test_y)
 # glove#
 ########
 # glove, pre
-glove = KeyedVectors.load_word2vec_format('data/glove.txt', binary=False, no_header=True)
+glove = KeyedVectors.load_word2vec_format('../data/glove.txt', binary=False, no_header=True)
 glove_list = glove.index_to_key
 glove_list_lower = [word.lower() for word in glove_list]
 num_features=glove.vector_size
@@ -234,9 +246,7 @@ m_glove_pre_tfidf = run_log_reg(train_X, test_X, train_y, test_y)
 # ft#
 ####
 # ft uses Logistic Regression and sentence embeddings; metrics caluclated and safed in class_fast.py
-
-m_ft_own = np.load("data/m_ft_own.npy") # these are my own trained
-#m_ft_own = np.load("data/fasttext_embeddings.npy") # these do not seem to be the own embeddings where are they from!! SO good performance
+m_ft_own = np.load("../data/m_ft_own.npy") # these are my own trained
 
 ##########
 # do2vec #
@@ -283,7 +293,7 @@ df_results.rename(index={0: 'bag of words', 1: 'bag of words (tf-idf)',
                          6: 'GloVe (pre, avg)', 7: 'GloVe (pre, tf-idf)',
                          8: 'fastText (own, avg)', 9: 'Doc2Vec'}, inplace=True)
 df_results = df_results.sort_values(by='f1score', ascending=False)
-df_results.round(decimals=3).to_latex(buf="figures/embdgs_over_mean.tex")
+df_results.round(decimals=3).to_latex(buf="../figures/embdgs_over_mean.tex")
 print(df_results.to_latex(float_format="{:0.1f}".format))
 
 

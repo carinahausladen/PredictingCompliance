@@ -59,8 +59,14 @@ def prepare_docs(df, y, X, dv):
                         ])
     df.loc[:, X] = df.loc[:, X].str.replace(pattern, " smiley ", regex=True)
 
-    nlp = spacy.load('de_core_news_sm')
-    #nlp = spacy.load('de')  # .venv/bin/python -m spacy download de
+    replacement_dict = {
+        "okidok": "ok",
+        "k": "ok"}
+    def replace_oov(doc, replacement_dict):
+        return " ".join([replacement_dict.get(word, word) for word in doc.split()])
+    df.loc[:, X] = df.loc[:, X].apply(lambda doc: replace_oov(doc, replacement_dict) if pd.notnull(doc) else doc)
+
+    nlp = spacy.load('de_core_news_sm') # .venv/bin/python -m spacy download de
     stop_words = spacy.lang.de.stop_words.STOP_WORDS
 
     #missing_rows = df[df[X].isna()]

@@ -110,4 +110,3 @@ df_p.to_json('data/df_chat_socio_splchckd.json')
 df_p.to_csv('data/df_chat_socio_splchckd.csv')
 
 
-count_of_1000_entries = (df_p['declared_income_final'] == 1000).sum()*0.8

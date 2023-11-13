@@ -5,7 +5,10 @@ import os
 import sys
 sys.path.append(os.path.abspath("scr_py"))
 
+import random
+import numpy as np
 import pandas as pd
+import torch
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -14,11 +17,19 @@ from strt_grp_sffl_splt import str_grp_splt
 from utility import print_model_metrics, run_grid_search, fit_n_times, tfdf_embdngs
 import pickle
 
+
+SEED = 42
+np.random.seed(SEED)
+random.seed(SEED)
+torch.random.manual_seed(SEED)
+torch.cuda.manual_seed_all(SEED)
+torch.use_deterministic_algorithms(True)
+
 ### setup I
 df = pd.read_csv('../data/df_chat_socio.csv')  # 855 rows, 9 columns
 df_new, all_docs = prepare_docs(df, X="Chat_subject", y="honestmean", dv="declared_income_final")
 all_docs.new_docs = [x if len(x) != 0 else "kein chat" for x in all_docs.new_docs]
-ros = RandomOverSampler(random_state=42, sampling_strategy='minority')  # oversampling!
+ros = RandomOverSampler(random_state=SEED, sampling_strategy='minority')  # oversampling!
 df["honestmean"].value_counts()  # 1: minority = compliance
 
 # Embeddings
@@ -37,9 +48,8 @@ train_idx, test_idx = str_grp_splt(df_new,
                                    train_share=0.8)
 train_X = X_tfidf[train_idx]
 test_X = X_tfidf[test_idx]
-train_y = df_new["honestmean"][train_idx]
+train_y = df_new["honestmean"][train_idx] #648 samples
 test_y = df_new["honestmean"][test_idx]
-train_X, train_y = ros.fit_resample(train_X, train_y)
 
 df_new["honestmean"].value_counts()  # minority label is 1!
 train_y.value_counts()
@@ -50,7 +60,7 @@ train_y.value_counts()
 ### Logistic Regression
 from sklearn.linear_model import SGDClassifier
 
-lr = SGDClassifier(loss='log_loss', random_state=42)
+lr = SGDClassifier(loss='log_loss', random_state=SEED)
 lr_params = {'alpha': [10 ** (-x) for x in range(7)],
              'penalty': ['l1', 'l2', 'elasticnet'],
              'l1_ratio': [0.15, 0.25, 0.5, 0.75]}
@@ -169,7 +179,7 @@ class SimpleNN(nn.Module):
     def __init__(self):
         super(SimpleNN, self).__init__()
         self.layers = nn.Sequential(
-            nn.Linear(3054, 300),
+            nn.Linear(3053, 300),
             nn.ReLU(),
             nn.Dropout(0.2),
             nn.Linear(300, 200),
@@ -182,9 +192,7 @@ class SimpleNN(nn.Module):
     def forward(self, x):
         return self.layers(x)
 
-torch.manual_seed(42)
-torch.cuda.manual_seed_all(42)
-torch.use_deterministic_algorithms(True)
+
 simple_nn = SimpleNN()
 criterion = nn.BCELoss()
 optimizer = Adam(simple_nn.parameters())
@@ -375,3 +383,34 @@ print(clf)
 perfect_information=sum(abs(df_both.loc[df_both["declared_income_final"] == 0].sample(n=103)["declared_income_final"] - 1000))*2
         # getting the worst cheaters
 print((clf-random)/random*100) #percentage increase
+
+
+#########################
+# predict Hausladen     #
+#########################
+
+from setup import prepare_docs_haus
+
+df_chat_hours = pd.read_csv('../data/df_chat_hours.csv')
+df_prep_new, all_docs_new = prepare_docs_haus(df_chat_hours, y="honest10", X="Chat_subject", dv="player.hours_stated")
+
+X = tfidf.transform(all_docs_new.new_docs)
+y = df_prep_new["honest10"]
+y_pred_prob = stacking_clf.predict_proba(X.toarray())
+metrics_10 = print_model_metrics(y, y_pred_prob, confusion=False, return_metrics=True)
+
+y = df_prep_new["honest30"]
+y_pred_prob = stacking_clf.predict_proba(X.toarray())
+metrics_30 = print_model_metrics(y, y_pred_prob, confusion=False, return_metrics=True)
+
+y = df_prep_new["honestmean"]
+y_pred_prob = stacking_clf.predict_proba(X.toarray())
+metrics_mean = print_model_metrics(y, y_pred_prob, confusion=False, return_metrics=True)
+
+# LATEX
+metrics_df = pd.DataFrame([metrics_mean, metrics_30, metrics_10])
+metrics_df.index = ['> mean', '> 30', '> 10']
+metrics_df = (metrics_df * 100).round(decimals=3)
+latex_output = metrics_df.to_latex(header=["f1score", "precision", "recall", "AUC", "accuracy"],
+                                   float_format="{:0.1f}".format)
+print(latex_output)
